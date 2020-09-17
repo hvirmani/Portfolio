@@ -1,10 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Montserrat;
+			height: 500vh;
+		}
+
+		header {
+			min-height: 100vh;
+			background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'), linear-gradient(90deg, #edf0ff 50%, #fff 50%);
+			background-position: center;
+			background-size: 2%, 100% 100%;
+		}
+
+		navbar {
+			width: 100%;
+			display: flex;
+			float: right;
+			height: 10vh;
+			position: fixed;
+			top: 0;
+		}
+
+		div {
+			font-size: 30px;
+			color: #fff;
+			font-weight: 900;
+			font-family: poppins;
+			padding: 10px;
+			text-align: center;
+			flex: 50%;
+		}
+
+		div span {
+			background: RGB(61, 100, 255);
+			border-radius: 100%;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			padding: 2.5px;
+			text-align: center;
+		}
+
+		div p {
+			display: inline;
+			margin-left: -18px;
+			color: #444;
+		}
+
+		ul {
+			margin: 20px auto 20px 2vw;
+			flex: 50%;
+		}
+
+		li {
+			list-style: none;
+			display: inline;
+			font-size: calc(10px + 1vw);
+			margin: 0 0.5vw;
+			position: relative;
+			padding: 2px 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: #444;
+		}
+
+		a:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			transform: translateX(-50%) scaleX(0);
+			transform-origin: 50% 50%;
+			height: 2px;
+			width: 95%;
+			background-color: RGB(61, 100, 255);
+			margin-top: 20px;
+			transition: transform 0.6s;
+		}
+
+		a:hover:after {
+			transform: translateX(-50%) scaleX(1);
+		}
+	</style>
 </head>
+
 <body>
-	
+	<header>
+		<navbar>
+			<div>
+				<span>H</span>
+				<p>arshit</p>
+			</div>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#resume">Resume</a></li>
+				<li><a href="#project">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</navbar>
+		<main>
+
+		</main>
+	</header>
 </body>
+
 </html>
