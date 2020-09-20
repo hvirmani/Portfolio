@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			
+			transition: all .2s;
+		}
+		body {
+			min-height: 500vh;
+			font-family: poppins;
+			font-size: 20px;
+		}
+       
+		#home {
+			min-height: 100vh;
+			background: red;
+		}
+
+		header {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			padding:2vh 5vw ;
+			background: lightgreen;
+		}
+		.sticky {
+			transition:all 4s;
+			background: yellow;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+		#resume {
+			background: #3ba0fc;
+			min-height: 100vh;
+		}
+		.logo,.navigation{
+			flex: 50%;
+			margin: 0;
+		}
+		.logo{
+			background: yellow;
+			font-size: 30px;
+			font-weight: 800;
+		}
+		.navigation{
+			background: pink;
+		}
+		li{
+			list-style: none;
+			display: inline;
+		}
+		.logo{
+			text-align: center;
+		}
+		#logo{
+			display: inline-block;
+			position: relative;
+			height: 50px;
+			width: 50px;
+			background: blue;
+			border-radius: 100%;
+			position: relative;
+			top: 50%;
+			left: 0%;
+			transform: translate(-70%,-50%);
+		}
+		#logo p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: #fff;
+		}
+		#logo p:after{
+			position: absolute;
+			content: "arshit";
+			top: 50%;
+			left: 100%;
+			transform: translateY(-50%);
+			color: #444;
+		}
+		.navigation{
+			position: relative;
+			text-align: center;
+			font-size: 20px;
+		}
+		li{
+			font-family: Montserrat;
+			margin: 0 5px;
+			font-size: calc(10px + 1vw);
+		}
+		ul{
+			background: purple;
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="home">
+		<header>
+		<div class="logo">
+		<span id="logo">
+			<p>H</p>
+		</span>
+	</div>
+		<div class="navigation">
+			<navbar>
+				<ul class="nasv ">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#resume">Resume</a></li>
+					<li><a href="#project">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</navbar>
+		</div>
+		</header>
+	</div>
+	<div id="resume">
+
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#resume").waypoint(
+				function(direction) {
+					if (direction == "down"){
+						$("header").addClass("sticky");
+						$(".sticky").fadeIn();
+					}
+					else{
+						$("header").removeClass("sticky");
+					}
+				}, {
+					offset: "60px;",
+				});
+		})
+	</script>
+</body>
+
+</html>
