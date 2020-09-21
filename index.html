@@ -3,124 +3,353 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title><Harshit/></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+	</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous">
+	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
+			transition: all .2s;
 		}
-
 		body {
-			font-family: Montserrat;
-			height: 500vh;
+			min-height: 500vh;
+			font-family: poppins;
+			font-size: 20px;
+			color: #444;
 		}
-
-		header {
+       
+		#home {
 			min-height: 100vh;
 			background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'), linear-gradient(90deg, #edf0ff 50%, #fff 50%);
 			background-position: center;
 			background-size: 2%, 100% 100%;
 		}
 
-		navbar {
+		header {
 			width: 100%;
 			display: flex;
-			float: right;
-			height: 10vh;
+			flex-direction: row;
+		}
+		.sticky {
+			transition:all .6s;
+			background: #ccc;
 			position: fixed;
 			top: 0;
+			width: 100%;
+			z-index: 9;
 		}
-
-		div {
-			font-size: 30px;
-			color: #fff;
-			font-weight: 900;
-			font-family: poppins;
-			padding: 10px;
-			text-align: center;
+		#resume {
+			background: #3ba0fc;
+			min-height: 100vh;
+		}
+		.logo,.navigation{
 			flex: 50%;
+			margin: 0;
 		}
-
-		div span {
+		.logo{
+			font-size: 30px;
+			font-weight: 800;
+		}
+		.navigation{
+			padding: 2vh 0;
+		}
+		.logo{
+			text-align: center;
+		}
+		#logo{
+			display: inline-block;
+			position: relative;
+			height: 50px;
+			width: 50px;
 			background: RGB(61, 100, 255);
 			border-radius: 100%;
-			display: inline-block;
-			width: 50px;
-			height: 50px;
-			padding: 2.5px;
-			text-align: center;
-		}
-
-		div p {
-			display: inline;
-			margin-left: -18px;
-			color: #444;
-		}
-
-		ul {
-			margin: 20px auto 20px 2vw;
-			flex: 50%;
-		}
-
-		li {
-			list-style: none;
-			display: inline;
-			font-size: calc(10px + 1vw);
-			margin: 0 0.5vw;
 			position: relative;
-			padding: 2px 0;
+			top: 50%;
+			left: 0%;
+			transform: translate(-70%,-50%);
 		}
-
-		a {
-			text-decoration: none;
+		#logo p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: #fff;
+		}
+		#logo p:after{
+			position: absolute;
+			content: "arshit";
+			top: 50%;
+			left: 100%;
+			transform: translateY(-50%);
 			color: #444;
 		}
-
-		a:after {
+		.navigation{
+			position: relative;
+			text-align: center;
+			font-size: calc(9px + 1vw);
+		}		
+		navbar .nav {
+    		float: none;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		@media (max-width:992px){
+			navbar .nav{
+				display: none;
+			}
+		}
+		header a{
+			color: #444;
+		}
+		a:hover{
+			color: #444;
+		}
+		header a:after {
 			content: '';
 			position: absolute;
 			left: 50%;
-			bottom: 0;
+			bottom: 10%;
 			transform: translateX(-50%) scaleX(0);
 			transform-origin: 50% 50%;
-			height: 2px;
-			width: 95%;
+			height: 2.4px;
+			width: 70%;
 			background-color: RGB(61, 100, 255);
-			margin-top: 20px;
 			transition: transform 0.6s;
 		}
-
-		a:hover:after {
+		header a:hover:after {
 			transform: translateX(-50%) scaleX(1);
+		}
+		header .active a {
+			color: RGB(61, 100, 255);
+		}
+		header li:nth-child(1) a{
+			color: #444;
+		}
+		header li:nth-child(1) a:after{
+			transform: translateX(-50%) scaleX(0);
+		}
+		header li:nth-child(1) a:hover:after{
+			transform: translateX(-50%) scaleX(1);
+		}
+		header .active a:after,a:hover:after {
+			transform: translateX(-50%) scaleX(1);
+		}
+		header li:nth-child(n) a:hover{
+			background: inherit;
+		}
+		header a:hover{
+			text-decoration: none;
+		}
+		
+	</style>
+	<style>
+	
+		#project {
+			min-height: 100vh;
+			background: red;
+			margin: 0;
+			font-family: Montserrat;
+			font-size: 50px;
+			color: #fff;
+		}
+
+		#project .col-lg-4 {
+			background: url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 45vh;
+			min-height: 300px;
+			position: relative;
+			transition: all .6s;
+			padding: 0;
+		}
+
+		@media (max-width:768px) {
+			#project {
+				padding: 0 2.5vw;
+			}
+		}
+
+		#project .description {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 45%;
+			transform: translateY(-50%);
+			text-align: center;
+			padding: 10px;
+			opacity: 0;
+			transition: all 0.8s;
+			z-index: 5;
+			margin: 10px 0;
+		}
+
+		#project .description div span {
+			font-size: 50px;
+			background: red;
+			margin: 0 10px;
+		}
+
+		#project a {
+			display: inline-block;
+			background: rgba(0, 0, 0, 0.5);
+			padding: 0px;
+			border-radius: 100%;
+			font-size: 42px;
+			height: 60px;
+			width: 60px;
+		}
+
+		#project .col-sm-6:hover .description {
+			opacity: 1;
+		}
+
+		#project .col-sm-6::after {
+			content: "";
+			background: linear-gradient(RGB(61, 100, 255, 0.9), RGB(61, 100, 255, 0.9)), url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
+			background-size: cover;
+			background-position: center;
+			opacity: 0;
+			transition: opacity 0.6s ease-in-out;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+		#project .col-sm-6:hover::after {
+			opacity: 1;
+		}
+		#project i{
+			color:rgb(255,255,255,0.5);
+			cursor: pointer;
+		}
+		#project{
+			padding-top: 50px;
 		}
 	</style>
 </head>
 
-<body>
-	<header>
-		<navbar>
-			<div>
-				<span>H</span>
-				<p>arshit</p>
-			</div>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#resume">Resume</a></li>
-				<li><a href="#project">Projects</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</navbar>
-		<main>
+<body data-spy="scroll" data-target="#navbar" data-offset="50">
+	<div id="home">
+		<header>
+		<div class="logo">
+		<span id="logo">
+			<p>H</p>
+		</span>
+	</div>
+		<div class="navigation">
+			<navbar id="navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#resume">Resume</a></li>
+					<li><a href="#project">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</navbar>
+		</div>
+		</header>
+	</div>
+	<div id="resume">
 
-		</main>
-	</header>
+	</div>
+	<div class="row" id="project">
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4  col-sm-6">
+			<div class="description">
+				<h1>
+					Coronavirus Tracker
+				</h1>
+				<div>
+					<a><i class="fa fa-github"></i></a>
+					<a><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$("#resume").waypoint(
+				function(direction) {
+					if (direction == "down"){
+						$("header").addClass("sticky");
+						$(".sticky").fadeIn();
+					}
+					else{
+						$("header").removeClass("sticky");
+					}
+				}, {
+					offset: "10vh",
+				});
+		})
+	</script>
 </body>
 
 </html>
