@@ -45,10 +45,6 @@
 			width: 100%;
 			z-index: 9;
 		}
-		#resume {
-			background: #3ba0fc;
-			min-height: 100vh;
-		}
 		.logo,.navigation{
 			flex: 50%;
 			margin: 0;
@@ -238,6 +234,156 @@
 			padding-top: 50px;
 		}
 	</style>
+		<style>
+		#resume {
+			font-family: poppins;
+			font-size: 20px;
+			margin: 0;
+		}
+
+		#education,
+		#skills,
+		#volunteer,
+		#certificates {
+			padding: calc(10px + 1.5vw);
+		}
+		.education,
+		.skills,
+		.volunteer,
+		.certificates {
+			display: flex;
+			flex-direction: row;
+			margin: 20px auto;
+		}
+		#resume .icon p {
+			background: RGB(61, 100, 255);
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			font-size: 40px;
+			margin: 0;
+			margin-right: 20px;
+			border-radius: 100%;
+			position: relative;
+		}
+		#resume .icon p i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+		}
+
+		#resume .info p:nth-child(1) {
+			margin-bottom: 0;
+			color: RGB(61, 100, 255); 
+		}
+
+		#resume .info p:nth-child(2) {
+			font-size: 25px;
+		}
+
+		#resume #certificates .info p:nth-child(1) {
+			font-size: 25px;
+			color: RGB(61, 100, 255);
+		}
+
+		#resume .col-sm-9 {
+			padding:2vh 5vw;
+		}
+
+		#resume #certificates .info p:nth-child(2) {
+			font-size: 20px;
+		}
+
+		#resume .col-sm-3 {
+			position: relative;
+		}
+
+		#resume .navigation{
+			position: fixed;
+			top: 45%;
+			left: 0;
+			width: 33.33%;
+			transform: translateY(-45%);
+			z-index: -1;
+			padding-left: calc(15vw - 110px);
+			text-align: justify-all;
+		}
+
+		#resume li a::before {
+			content: "";
+			padding: 0 5px;
+			font-size: 25px;
+			opacity: 0;
+			width: 0%;
+			transition-delay: 0.1s;
+		}
+
+		#resume li.current a::before {
+			content: "—";
+			opacity: 1;
+			width: 100%;
+		}
+
+		#resume ul {
+			margin: 0;
+		}
+
+		#resume li:hover {
+			transition: all 0.001s;
+			font-size: 26px;
+		}
+
+		#resume li:nth-child(n) a:hover {
+			background: inherit;
+		}
+		#resume a{
+			color: #444;
+			font-size: 25px;
+			text-align: left;
+		}
+		#resume a::before{
+			color: RGB(61, 100, 255);
+		}
+		#resume .current a {
+			color: RGB(61, 100, 255);
+		}
+		#resume{
+			text-align: justify;
+		}
+		@media (max-width:768px) {
+			#resume .col-sm-3 {
+				display: none;
+			}
+			#resume .col-sm-9{
+				padding:2vh calc(2vw + 10px);
+				text-align: left;
+				
+			}
+		}
+		#resume li {
+			left: -5%;
+		}
+
+		#resume .current {
+			left: 0%;
+		}
+		#resume h1{
+			color: RGB(61, 100, 255);
+			font-weight: 700;
+			font-size: 40px;
+		}
+		#resume hr{
+			background: RGB(61, 100, 255);
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			height: 0.5px;
+			margin-bottom: 50px;
+		}
+		
+	</style>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="50">
@@ -261,9 +407,255 @@
 		</div>
 		</header>
 	</div>
-	<div id="resume">
+		<div class="row" id="resume">
 
+		<div class="col-sm-3">
+			<div class="navigation">
+				<ul class="nav">
+					<li class="e"><a href="#education">Education</a></li>
+					<li class="s"><a href="#skills">Skills</a></li>
+					<li class="v"><a href="#volunteer">Volunteering</a></li>
+					<li class="c"><a href="#certificates">Certificates</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div id="education">
+				<h1>Education</h1>
+				<div class="education">
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+						<p>San Jose State University</p>
+						<p>
+							Relevant Coursework: Enterprise Software Platforms, Software System Engineering, Software Processes, Large Scale Analytics, Data Mining, Big Data Engineering, Deep Learning.
+
+							aster in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr style="background: RGB(61, 100, 255);
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			height: 0.5px;
+			margin-bottom: 50px;">
+				<div class="education">
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+						<p>San Jose State University</p>
+						<p>
+							Relevant Coursework: Enterprise Software Platforms, Software System Engineering, Software Processes, Large Scale Analytics, Data Mining, Big Data Engineering, Deep Learning.
+
+							aster in Software Engineering
+						</p>
+					</div>
+
+				</div>
+			</div>
+			<div id="skills">
+				<h1>Skills</h1>
+				<div class="skills">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="skills">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="skills">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="skills">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+			</div>
+			<div id="volunteer">
+				<h1>Volunteering</h1>
+				<div class="volunteer">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="volunteer">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="volunteer">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+				<div class="volunteer">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+			</div>
+			<div id="certificates">
+				<h1>Certificates</h1>
+				<div class="certificates">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+
+				<div class="certificates">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+				<hr>
+
+				<div class="certificates">
+
+					<div class='icon'>
+						<p>
+							<i class="fa fa-github"></i>
+						</p>
+					</div>
+					<div class='info'>
+						<p>Aug. 2019 - May 2021</p>
+						<p>
+							Master in Software Engineering
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
 	</div>
+
 	<div class="row" id="project">
 		<div class="col-lg-4  col-sm-6">
 			<div class="description">
@@ -348,6 +740,62 @@
 				}, {
 					offset: "10vh",
 				});
+		})
+	</script>
+		<script>
+		let education = document.querySelector("#education");
+		let skills = document.querySelector("#skills");
+		let volunteer = document.querySelector("#volunteer");
+		let certificates = document.querySelector("#certificates");
+		
+		function a(){
+			var windo = window.pageYOffset;
+			let h=-window.innerHeight/2;
+			if ((education.offsetTop-h) <= windo && (skills.offsetTop-h) > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+
+				document.querySelector(".e").classList.add("current");
+			} 
+			else if (skills.offsetTop-h <= windo && volunteer.offsetTop-h > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".s").classList.add("current");
+			} 
+			else if (volunteer.offsetTop-h <= windo && certificates.offsetTop-h > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".v").classList.add("current");
+			}
+			else if (certificates.offsetTop-h <= windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".c").classList.add("current");
+			} 
+			else {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+			}
+		}
+		window.addEventListener("scroll", () => {
+			var windo = window.pageYOffset;
+			var a=document.querySelector("#home").offsetHeight;
+			let h=window.innerHeight/2-a;
+			if ((education.offsetTop-h) <= windo && (skills.offsetTop-h) > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+
+				document.querySelector(".e").classList.add("current");
+			} 
+			else if (skills.offsetTop-h <= windo && volunteer.offsetTop-h > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".s").classList.add("current");
+			} 
+			else if (volunteer.offsetTop-h <= windo && certificates.offsetTop-h > windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".v").classList.add("current");
+			}
+			else if (certificates.offsetTop-h <= windo) {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+				document.querySelector(".c").classList.add("current");
+			} 
+			else {
+				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
+			}
 		})
 	</script>
 </body>
