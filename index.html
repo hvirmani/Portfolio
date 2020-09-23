@@ -3,8 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>
-	</title>
+	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -16,20 +15,31 @@
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			transition: all .2s;
+			transition: all 0.6s;
 		}
+
 		body {
-			min-height: 500vh;
 			font-family: poppins;
-			font-size: 20px;
+			font-size: 25px;
 			color: #444;
+			transition: all .1s;
 		}
-       
+
 		#home {
 			min-height: 100vh;
 			background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'), linear-gradient(90deg, #edf0ff 50%, #fff 50%);
 			background-position: center;
-			background-size: 2%, 100% 100%;
+			background-size: 3%, 100% 100%;
+			z-index: 2;
+			position: relative;
+		}
+
+		main {
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			transform: translate(-45%, -50%);
+			color:#111;
 		}
 
 		header {
@@ -37,29 +47,39 @@
 			display: flex;
 			flex-direction: row;
 		}
+
 		.sticky {
-			transition:all .6s;
+			transition: all .6s;
 			background: #ccc;
 			position: fixed;
 			top: 0;
 			width: 100%;
-			z-index: 9;
+			z-index: 5;
 		}
-		.logo,.navigation{
+
+		.logo,
+		.navigation {
 			flex: 50%;
 			margin: 0;
 		}
-		.logo{
+
+		.logo {
 			font-size: 30px;
 			font-weight: 800;
-		}
-		.navigation{
-			padding: 2vh 0;
-		}
-		.logo{
 			text-align: center;
+			display: flex;
 		}
-		#logo{
+
+		.navigation {
+			padding: 2vh 0;
+			font-size: calc(9px + 1vw);
+		}
+
+		.logo div {
+			flex: 50%;
+		}
+
+		#logo {
 			display: inline-block;
 			position: relative;
 			height: 50px;
@@ -69,16 +89,18 @@
 			position: relative;
 			top: 50%;
 			left: 0%;
-			transform: translate(-70%,-50%);
+			transform: translate(-70%, -50%);
 		}
-		#logo p{
+
+		#logo p {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%,-50%);
+			transform: translate(-50%, -50%);
 			color: #fff;
 		}
-		#logo p:after{
+
+		#logo p:after {
 			position: absolute;
 			content: "arshit";
 			top: 50%;
@@ -86,29 +108,12 @@
 			transform: translateY(-50%);
 			color: #444;
 		}
-		.navigation{
-			position: relative;
-			text-align: center;
-			font-size: calc(9px + 1vw);
-		}		
-		navbar .nav {
-    		float: none;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-		}
-		@media (max-width:992px){
-			navbar .nav{
-				display: none;
-			}
-		}
-		header a{
+
+		header a,
+		header a:hover {
 			color: #444;
 		}
-		a:hover{
-			color: #444;
-		}
+
 		header a:after {
 			content: '';
 			position: absolute;
@@ -119,34 +124,161 @@
 			height: 2.4px;
 			width: 70%;
 			background-color: RGB(61, 100, 255);
-			transition: transform 0.6s;
+			transition: transform 0.4s;
 		}
+
 		header a:hover:after {
 			transform: translateX(-50%) scaleX(1);
 		}
+
 		header .active a {
 			color: RGB(61, 100, 255);
 		}
-		header li:nth-child(1) a{
+
+		header li:nth-child(1) a {
 			color: #444;
 		}
-		header li:nth-child(1) a:after{
+
+		header li:nth-child(1) a:after {
 			transform: translateX(-50%) scaleX(0);
 		}
-		header li:nth-child(1) a:hover:after{
+
+		header li:nth-child(1) a:hover:after {
 			transform: translateX(-50%) scaleX(1);
 		}
-		header .active a:after,a:hover:after {
+
+		header .active a:after,
+		a:hover:after {
 			transform: translateX(-50%) scaleX(1);
 		}
-		header li:nth-child(n) a:hover{
+
+		header li:nth-child(n) a:hover,
+		header li:nth-child(n) a:focus {
 			background: inherit;
 		}
-		header a:hover{
+
+		header a:hover {
 			text-decoration: none;
 		}
-		
+
+		header #toggle_container {
+			display: none;
+		}
+
+		navbar {
+			position: relative;
+		}
+
+		@media (min-width:992px) {
+			header navbar .nav {
+				float: none;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		header .navigation {
+			z-index: 8;
+		}
+
+		header .logo div {
+			position: relative;
+		}
+
+		@media (max-width:992px) {
+			header {
+				flex-direction: column;
+			}
+
+			#logo {
+				top: 0%;
+				transform: translate(-70%, 0%);
+			}
+
+			header a:after {
+				width: 10%;
+			}
+
+			header .navigation {
+				padding: 0;
+				font-size: calc(20px + 0.5vw);
+			}
+
+			header .nav,
+			header .navbar-nav {
+				display: block;
+				text-align: center;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background: #eee;
+			}
+
+			header .logo div {
+				padding: 1vh 0;
+			}
+
+			header li {
+				width: 100%;
+				text-align: justify-all;
+			}
+
+			header .navbar-nav {
+				overflow: hidden;
+				max-height: 0;
+			}
+
+			header .nav_toggle {
+				max-height: 500px;
+			}
+
+			header #toggle_container {
+				display: block;
+				position: relative;
+
+			}
+
+			header button {
+				height: 40px;
+				width: 40px;
+				font-size: 28px;
+				padding: 0;
+				margin: 0;
+				border: none;
+				background: inherit;
+				position: relative;
+				left: 50%;
+				transform: translate(-100%, 10%);
+			}
+
+			header button:before {
+				content: '\f0c9';
+				font-family: fontAwesome;
+			}
+
+			header button.toggled:before {
+				content: '\f00d';
+			}
+		}
+
+		#home main h1 {
+			font-size: 50px;
+			font-weight: 700;
+		}
+
+		#home main h2 {
+			font-size: 30px;
+			font-weight: bold;
+		}
+
+		.txt-rotate {
+			color: RGB(61, 100, 255);
+			text-decoration: underline;
+		}
 	</style>
+	
 	<style>
 	
 		#project {
@@ -156,6 +288,7 @@
 			font-family: Montserrat;
 			font-size: 50px;
 			color: #fff;
+			z-index: 3;
 		}
 
 		#project .col-lg-4 {
@@ -230,15 +363,17 @@
 			color:rgb(255,255,255,0.5);
 			cursor: pointer;
 		}
-		#project{
-			padding-top: 50px;
-		}
 	</style>
-		<style>
+	<style>
+		
+
 		#resume {
 			font-family: poppins;
 			font-size: 20px;
 			margin: 0;
+			text-align: left;
+			z-index: -1;
+			position: relative;
 		}
 
 		#education,
@@ -306,7 +441,7 @@
 			left: 0;
 			width: 33.33%;
 			transform: translateY(-45%);
-			z-index: -1;
+			z-index: 5;
 			padding-left: calc(15vw - 110px);
 			text-align: justify-all;
 		}
@@ -341,7 +476,6 @@
 		#resume a{
 			color: #444;
 			font-size: 25px;
-			text-align: left;
 		}
 		#resume a::before{
 			color: RGB(61, 100, 255);
@@ -382,32 +516,43 @@
 			height: 0.5px;
 			margin-bottom: 50px;
 		}
-		
 	</style>
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="50">
-	<div id="home">
+<body data-spy="scroll" data-target="#navbar" data-offset="100">	<div id="home">
 		<header>
-		<div class="logo">
-		<span id="logo">
-			<p>H</p>
-		</span>
-	</div>
-		<div class="navigation">
-			<navbar id="navbar">
-				<ul class="nav navbar-nav">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#resume">Resume</a></li>
-					<li><a href="#project">Projects</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</navbar>
-		</div>
+			<div class="logo">
+				<div><span id="logo">
+						<p>H</p>
+					</span></div>
+				<div id="toggle_container"> <button id="tog" onclick="toggle();"></button></div>
+
+
+			</div>
+			<div class="navigation">
+				<navbar id="navbar">
+					<ul class="nav navbar-nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#resume">Resume</a></li>
+						<li><a href="#project">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</navbar>
+			</div>
 		</header>
+		<main>
+			<div class="text text-center">
+				<span class="subheading">Hey! I am&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<h1>Harshit Virmani</h1>
+				<h2>I'm a
+					<span class="txt-rotate" data-period="2000" data-rotate='[ "Data Science Freak.", "Developer.", "Community Builder.", "Blogger." ]'></span>
+				</h2>
+			</div>
+		</main>
+
 	</div>
-		<div class="row" id="resume">
+	<div class="row" id="resume">
 
 		<div class="col-sm-3">
 			<div class="navigation">
@@ -655,7 +800,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="row" id="project">
 		<div class="col-lg-4  col-sm-6">
 			<div class="description">
@@ -730,11 +874,10 @@
 		$(document).ready(function() {
 			$("#resume").waypoint(
 				function(direction) {
-					if (direction == "down"){
+					if (direction == "down") {
 						$("header").addClass("sticky");
 						$(".sticky").fadeIn();
-					}
-					else{
+					} else {
 						$("header").removeClass("sticky");
 					}
 				}, {
@@ -742,6 +885,78 @@
 				});
 		})
 	</script>
+	<script>
+		function toggle() {
+			$(document).ready(function() {
+				var a = document.querySelector(".navbar-nav");
+				var b = document.querySelector("#tog");
+				a.classList.toggle("nav_toggle");
+				b.classList.toggle("toggled");
+				console.log(a.offsetHeight);
+			});
+		}
+	</script>
+	<script>
+		var TxtRotate = function(el, toRotate, period) {
+			this.toRotate = toRotate;
+			this.el = el;
+			this.loopNum = 0;
+			this.period = parseInt(period, 10) || 2000;
+			this.txt = '';
+			this.tick();
+			this.isDeleting = false;
+		};
+
+		TxtRotate.prototype.tick = function() {
+			var i = this.loopNum % this.toRotate.length;
+			var fullTxt = this.toRotate[i];
+
+			if (this.isDeleting) {
+				this.txt = fullTxt.substring(0, this.txt.length - 1);
+			} else {
+				this.txt = fullTxt.substring(0, this.txt.length + 1);
+			}
+
+			this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+			var that = this;
+			var delta = 300 - Math.random() * 100;
+
+			if (this.isDeleting) {
+				delta /= 2;
+			}
+
+			if (!this.isDeleting && this.txt === fullTxt) {
+				delta = this.period;
+				this.isDeleting = true;
+			} else if (this.isDeleting && this.txt === '') {
+				this.isDeleting = false;
+				this.loopNum++;
+				delta = 500;
+			}
+
+			setTimeout(function() {
+				that.tick();
+			}, delta);
+		};
+
+		window.onload = function() {
+			var elements = document.getElementsByClassName('txt-rotate');
+			for (var i = 0; i < elements.length; i++) {
+				var toRotate = elements[i].getAttribute('data-rotate');
+				var period = elements[i].getAttribute('data-period');
+				if (toRotate) {
+					new TxtRotate(elements[i], JSON.parse(toRotate), period);
+				}
+			}
+			// INJECT CSS
+			var css = document.createElement("style");
+			css.type = "text/css";
+			css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+			document.body.appendChild(css);
+		};
+	</script>
+	
 		<script>
 		let education = document.querySelector("#education");
 		let skills = document.querySelector("#skills");
