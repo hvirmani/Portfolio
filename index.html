@@ -16,6 +16,8 @@
 			padding: 0;
 			box-sizing: border-box;
 			transition: all 0.6s;
+			outline: none;
+			scroll-behavior: smooth;
 		}
 
 		body {
@@ -39,7 +41,7 @@
 			top: 45%;
 			left: 50%;
 			transform: translate(-45%, -50%);
-			color:#111;
+			color: #111;
 		}
 
 		header {
@@ -50,7 +52,8 @@
 
 		.sticky {
 			transition: all .6s;
-			background: #ccc;
+			background: #fff;
+			box-shadow: 0px 0px 2px #444;
 			position: fixed;
 			top: 0;
 			width: 100%;
@@ -198,7 +201,8 @@
 			}
 
 			header a:after {
-				width: 10%;
+				width: 50vw;
+				max-width: calc(2.5vw + 70px);
 			}
 
 			header .navigation {
@@ -213,11 +217,11 @@
 				margin: 0;
 				padding: 0;
 				width: 100%;
-				background: #eee;
+				background: #fff;
 			}
 
 			header .logo div {
-				padding: 1vh 0;
+				padding: 10px 0 0;
 			}
 
 			header li {
@@ -228,10 +232,12 @@
 			header .navbar-nav {
 				overflow: hidden;
 				max-height: 0;
+				transition: padding 0.01s;
 			}
 
 			header .nav_toggle {
 				max-height: 500px;
+				padding-bottom: 1vh;
 			}
 
 			header #toggle_container {
@@ -249,7 +255,7 @@
 				border: none;
 				background: inherit;
 				position: relative;
-				left: 50%;
+				left: 40%;
 				transform: translate(-100%, 10%);
 			}
 
@@ -278,17 +284,14 @@
 			text-decoration: underline;
 		}
 	</style>
-	
+
 	<style>
-	
 		#project {
-			min-height: 100vh;
-			background: red;
 			margin: 0;
 			font-family: Montserrat;
 			font-size: 50px;
 			color: #fff;
-			z-index: 3;
+			z-index: 5;
 		}
 
 		#project .col-lg-4 {
@@ -319,13 +322,12 @@
 			padding: 10px;
 			opacity: 0;
 			transition: all 0.8s;
-			z-index: 5;
+			z-index: 1;
 			margin: 10px 0;
 		}
 
 		#project .description div span {
 			font-size: 50px;
-			background: red;
 			margin: 0 10px;
 		}
 
@@ -359,20 +361,19 @@
 		#project .col-sm-6:hover::after {
 			opacity: 1;
 		}
-		#project i{
-			color:rgb(255,255,255,0.5);
+
+		#project i {
+			color: rgb(255, 255, 255, 0.5);
 			cursor: pointer;
 		}
 	</style>
 	<style>
-		
-
 		#resume {
 			font-family: poppins;
 			font-size: 20px;
 			margin: 0;
 			text-align: left;
-			z-index: -1;
+			z-index: 1;
 			position: relative;
 		}
 
@@ -380,16 +381,18 @@
 		#skills,
 		#volunteer,
 		#certificates {
-			padding: calc(10px + 1.5vw);
+			padding: 0 calc(10px + 1.5vw);
+			padding-top: 10vh;
 		}
+
 		.education,
 		.skills,
 		.volunteer,
 		.certificates {
 			display: flex;
 			flex-direction: row;
-			margin: 20px auto;
 		}
+
 		#resume .icon p {
 			background: RGB(61, 100, 255);
 			display: inline-block;
@@ -401,6 +404,7 @@
 			border-radius: 100%;
 			position: relative;
 		}
+
 		#resume .icon p i {
 			position: absolute;
 			top: 50%;
@@ -411,7 +415,8 @@
 
 		#resume .info p:nth-child(1) {
 			margin-bottom: 0;
-			color: RGB(61, 100, 255); 
+			color: RGB(61, 100, 255);
+			font-weight: bold;
 		}
 
 		#resume .info p:nth-child(2) {
@@ -424,7 +429,7 @@
 		}
 
 		#resume .col-sm-9 {
-			padding:2vh 5vw;
+			padding: 2vh 5vw;
 		}
 
 		#resume #certificates .info p:nth-child(2) {
@@ -435,7 +440,7 @@
 			position: relative;
 		}
 
-		#resume .navigation{
+		#resume .navigation {
 			position: fixed;
 			top: 45%;
 			left: 0;
@@ -473,29 +478,37 @@
 		#resume li:nth-child(n) a:hover {
 			background: inherit;
 		}
-		#resume a{
-			color: #444;
+
+		#resume a {
+			color: #111;
 			font-size: 25px;
+			font-weight: bold;
 		}
-		#resume a::before{
+
+		#resume a::before {
 			color: RGB(61, 100, 255);
 		}
+
 		#resume .current a {
 			color: RGB(61, 100, 255);
 		}
-		#resume{
+
+		#resume {
 			text-align: justify;
 		}
+
 		@media (max-width:768px) {
 			#resume .col-sm-3 {
 				display: none;
 			}
-			#resume .col-sm-9{
-				padding:2vh calc(2vw + 10px);
+
+			#resume .col-sm-9 {
+				padding: 2vh calc(2vw + 10px);
 				text-align: left;
-				
+
 			}
 		}
+
 		#resume li {
 			left: -5%;
 		}
@@ -503,12 +516,15 @@
 		#resume .current {
 			left: 0%;
 		}
-		#resume h1{
+
+		#resume h1 {
 			color: RGB(61, 100, 255);
 			font-weight: 700;
 			font-size: 40px;
+			margin-bottom: 5vh;
 		}
-		#resume hr{
+
+		#resume hr {
 			background: RGB(61, 100, 255);
 			width: 100%;
 			text-align: center;
@@ -516,10 +532,125 @@
 			height: 0.5px;
 			margin-bottom: 50px;
 		}
+
+		.background {
+			background: #fff;
+		}
+
+		#resume {
+			padding-top: 5vh;
+		}
+
+		#project {
+			z-index: 1;
+			position: relative;
+			background: #fff;
+			padding-top: 10vh;
+		}
+
+		#project .text h1 {
+			font-size: 60px;
+			font-weight: bold;
+			color: #111;
+			margin: 5vh auto;
+		}
+	</style>
+
+	<style>
+		#contact a {
+			text-decoration: none;
+			color: #b3b3b3;
+		}
+
+		#contact {
+			background: #000000;
+			font-size: 20px;
+			color: #b3b3b3;
+			margin: 0;
+			transition: ALL .6s;
+			position: relative;
+			z-index: 1;
+			padding: 5vh 0;
+		}
+
+		#contact i {
+			cursor: pointer;
+		}
+
+		#contact h1 {
+			font-size: 30px;
+			color: #fff;
+		}
+
+		#about_me a {
+			display: inline-block;
+			font-size: 26px;
+			background: #1a1a1a;
+			border-radius: 100%;
+			text-align: center;
+			width: 48px;
+			height: 48px;
+			padding: 6px;
+			margin: 5px;
+		}
+
+		#about_me a:hover i {
+			color: #ccc;
+		}
+
+		#about_me p,
+		#about_me social {
+			margin: calc(2vw + 10px) auto;
+		}
+
+		.contact_footer div {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			word-break: break-all;
+		}
+
+		.contact_footer div p:nth-child(1) {
+			flex: 2%;
+			margin: 10px;
+		}
+
+		.contact_footer div p:nth-child(2) {
+			flex: 95%;
+			margin: 10px;
+		}
+
+		#contact .col-sm-10 {
+			padding: 10px;
+		}
+
+		#contact .col-sm-6 {
+			margin: 30px 0;
+		}
+
+		#contact footer {
+			text-align: center;
+		}
+
+		#contact footer p {
+			display: inline-block;
+		}
+
+		#contact .clearfix {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		#contact .contact_footer i {
+			color: #fff;
+		}
 	</style>
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="100">	<div id="home">
+<body data-spy="scroll" data-target="#navbar" data-offset="100">
+	<div id="home">
 		<header>
 			<div class="logo">
 				<div><span id="logo">
@@ -801,7 +932,11 @@
 		</div>
 	</div>
 	<div class="row" id="project">
+		<div class="text text-center">
+			<h1>Projects</h1>
+		</div>
 		<div class="col-lg-4  col-sm-6">
+
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -869,7 +1004,56 @@
 			</div>
 		</div>
 	</div>
+	<div id="contact" class="container-fluid">
+		<div class="col-md-12 col-centered">
+			<div class="col-sm-6 center" id="about_me">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10 description">
+					<h1>About</h1>
+					<p>
+						A Data-Science Freak, actively looking for suitable opportunities.
+					</p>
+					<div class="social">
+						<a href=""><i class="fa fa-github"></i></a>
+						<a href=""><i class="fa fa-instagram"></i></a>
+						<a href=""><i class="fa fa-linkedin"></i></a>
+						<a href=""><i class="fa fa-envelope"></i></a>
+					</div>
+				</div>
+				<div class="col-sm-1"></div>
 
+			</div>
+
+			<div class="col-sm-6 center" id="contact_me">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10 description">
+					<h1>Have Questions?</h1>
+					<div class="contact_footer">
+						<div>
+							<p><i class="fa fa-map-marker"></i></p>
+							<p>Yamunanagar,India</p>
+						</div>
+						<div>
+							<p><a href="tel:8529199089"><i class="fa fa-phone"></i></a></p>
+							<p><a href="tel:8529199089">+(91) 8529199089</a></p>
+						</div>
+						<div>
+							<p><a href="mailto:officialhvirmani@gmail.com"><i class="fa fa-envelope"></i></a></p>
+							<p><a href="mailto:officialhvirmani@gmail.com">officialhvirmani@gmail.com</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
+		</div>
+		<div class="clearfix">
+
+		</div>
+		<footer>
+			<p>Copyright ©2020 All rights reserved </p>&nbsp;|&nbsp;<p>Made with❤ by Harshit</p>
+		</footer>
+
+	</div>
 	<script>
 		$(document).ready(function() {
 			$("#resume").waypoint(
@@ -888,10 +1072,12 @@
 	<script>
 		function toggle() {
 			$(document).ready(function() {
-				var a = document.querySelector(".navbar-nav");
-				var b = document.querySelector("#tog");
+				let a = document.querySelector(".navbar-nav");
+				let b = document.querySelector("#tog");
 				a.classList.toggle("nav_toggle");
 				b.classList.toggle("toggled");
+				let c = document.querySelector("header");
+				c.classList.toggle("background");
 				console.log(a.offsetHeight);
 			});
 		}
@@ -956,59 +1142,51 @@
 			document.body.appendChild(css);
 		};
 	</script>
-	
-		<script>
+
+	<script>
 		let education = document.querySelector("#education");
 		let skills = document.querySelector("#skills");
 		let volunteer = document.querySelector("#volunteer");
 		let certificates = document.querySelector("#certificates");
-		
-		function a(){
+
+		function a() {
 			var windo = window.pageYOffset;
-			let h=-window.innerHeight/2;
-			if ((education.offsetTop-h) <= windo && (skills.offsetTop-h) > windo) {
+			let h = -window.innerHeight / 2;
+			if ((education.offsetTop - h) <= windo && (skills.offsetTop - h) > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 
 				document.querySelector(".e").classList.add("current");
-			} 
-			else if (skills.offsetTop-h <= windo && volunteer.offsetTop-h > windo) {
+			} else if (skills.offsetTop - h <= windo && volunteer.offsetTop - h > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".s").classList.add("current");
-			} 
-			else if (volunteer.offsetTop-h <= windo && certificates.offsetTop-h > windo) {
+			} else if (volunteer.offsetTop - h <= windo && certificates.offsetTop - h > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".v").classList.add("current");
-			}
-			else if (certificates.offsetTop-h <= windo) {
+			} else if (certificates.offsetTop - h <= windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".c").classList.add("current");
-			} 
-			else {
+			} else {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 			}
 		}
 		window.addEventListener("scroll", () => {
 			var windo = window.pageYOffset;
-			var a=document.querySelector("#home").offsetHeight;
-			let h=window.innerHeight/2-a;
-			if ((education.offsetTop-h) <= windo && (skills.offsetTop-h) > windo) {
+			var a = document.querySelector("#home").offsetHeight;
+			let h = window.innerHeight / 2 - a;
+			if ((education.offsetTop - h) <= windo && (skills.offsetTop - h) > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 
 				document.querySelector(".e").classList.add("current");
-			} 
-			else if (skills.offsetTop-h <= windo && volunteer.offsetTop-h > windo) {
+			} else if (skills.offsetTop - h <= windo && volunteer.offsetTop - h > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".s").classList.add("current");
-			} 
-			else if (volunteer.offsetTop-h <= windo && certificates.offsetTop-h > windo) {
+			} else if (volunteer.offsetTop - h <= windo && certificates.offsetTop - h > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".v").classList.add("current");
-			}
-			else if (certificates.offsetTop-h <= windo) {
+			} else if (certificates.offsetTop - h <= windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 				document.querySelector(".c").classList.add("current");
-			} 
-			else {
+			} else {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 			}
 		})
