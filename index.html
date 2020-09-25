@@ -428,7 +428,7 @@
 			color: RGB(61, 100, 255);
 		}
 
-		#resume .col-sm-9 {
+		#resume .col-sm-8 {
 			padding: 2vh 5vw;
 		}
 
@@ -436,7 +436,7 @@
 			font-size: 20px;
 		}
 
-		#resume .col-sm-3 {
+		#resume .col-sm-4 {
 			position: relative;
 		}
 
@@ -498,11 +498,11 @@
 		}
 
 		@media (max-width:768px) {
-			#resume .col-sm-3 {
+			#resume .col-sm-4 {
 				display: none;
 			}
 
-			#resume .col-sm-9 {
+			#resume .col-sm-8 {
 				padding: 2vh calc(2vw + 10px);
 				text-align: left;
 
@@ -647,6 +647,51 @@
 			color: #fff;
 		}
 	</style>
+	<style>
+		#resume {
+			position: relative;
+		}
+
+		#resume .col-sm-4 {
+			min-height: 100vh;
+			position: relative;
+			transition: all 0s;
+		}
+
+		#resume .abs {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			z-index: 5;
+			width: 100%;
+			padding-left: calc(15vw - 100px);
+			text-align: justify-all;
+			transition: all 0s;
+		}
+
+		#resume .fix {
+			position: fixed;
+			width: 33.33%;
+			top: 10%;
+			left: 0;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		#resume .side_affix {
+			margin-top: 0;
+		}
+	</style>
+	<style>
+		.down_scroller{
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="100">
@@ -680,13 +725,16 @@
 					<span class="txt-rotate" data-period="2000" data-rotate='[ "Data Science Freak.", "Developer.", "Community Builder.", "Blogger." ]'></span>
 				</h2>
 			</div>
+			
 		</main>
-
+<div class="down_scroller">
+				<button>+</button>
+			</div>
 	</div>
 	<div class="row" id="resume">
 
-		<div class="col-sm-3">
-			<div class="navigation">
+		<div class="col-sm-4 side_affix">
+			<div class="navigation abs">
 				<ul class="nav">
 					<li class="e"><a href="#education">Education</a></li>
 					<li class="s"><a href="#skills">Skills</a></li>
@@ -695,7 +743,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-8 aside_affix">
 			<div id="education">
 				<h1>Education</h1>
 				<div class="education">
@@ -1190,6 +1238,27 @@
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
 			}
 		})
+	</script>
+	<script>
+		window.onscroll = function() {
+			let a = document.querySelector("#home");
+			let c = document.querySelector("#project");
+			let b = window.pageYOffset;
+			if (b >= a.offsetHeight && b <= c.offsetTop - window.innerHeight) {
+				document.querySelector(".abs").classList.add("fix");
+			} else {
+				if (document.querySelector(".fix"))
+					document.querySelector(".fix").classList.remove("fix");
+				if (b >= c.offsetTop - window.innerHeight) {
+					let e = document.querySelector(".aside_affix").offsetHeight - window.innerHeight;
+					document.querySelector(".side_affix").style.marginTop = `${e}px`;
+					console.log(e + window.innerHeight);
+
+				} else {
+					document.querySelector(".side_affix").style.marginTop = "0px";
+				}
+			}
+		}
 	</script>
 </body>
 
