@@ -563,8 +563,8 @@
 		}
 
 		#contact {
-			background: #000000;
 			font-size: 20px;
+			background: #000000;
 			color: #b3b3b3;
 			margin: 0;
 			transition: ALL .6s;
@@ -690,6 +690,59 @@
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		#contact .col-md-8 {
+			padding: 0;
+		}
+
+		.row {
+			margin: 0;
+		}
+
+		#contact .col-md-6,
+		#contact .col-md-12 {
+			margin: calc(10px + 1.5vh) auto;
+		}
+
+		#contact input,
+		#contact textarea {
+			width: 100%;
+			text-align: justify;
+			border-radius: 3px;
+			border: none;
+			padding: 15px 20px;
+			background: #efefef;
+			border-bottom: 2px solid white;
+			word-break: break-all;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			resize: none;
+		}
+
+		#contact input:focus,
+		#contact textarea:focus {
+			border: none;
+			outline: none;
+			border-bottom: 3px solid RGB(61, 100, 255);
+		}
+
+		#contact input[type=submit] {
+			border-radius: 50px;
+			width: 65%;
+			background: RGB(61, 100, 255);
+			padding: 10px;
+			color: #fff;
+			border: none;
+			font-size: 25px;
+			border: 3px solid transparent;
+			outline: none;
+			text-align: center;
+		}
+
+
+		#contact input[type=submit]:hover {
+			box-shadow: 0px 0px 0 0.4rem rgba(80, 191, 230, 0.4);
+			outline: 0;
 		}
 	</style>
 </head>
@@ -1053,6 +1106,32 @@
 		</div>
 	</div>
 	<div id="contact" class="container-fluid">
+	<div class="first">
+		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10">
+			<form action="">
+				<div class="col-md-6">
+					<input type="text" placeholder="Name" required>
+				</div>
+				<div class="col-md-6">
+					<input type="email" placeholder="E-mail" required>
+
+				</div>
+				<div class="col-md-12">
+					<textarea rows="5" placeholder="Your Message" required></textarea>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<input type="submit">
+				</div>
+				<div class="col-md-4"></div>
+			</form>
+
+		</div>
+		<div class="col-md-2 col-xs-1">
+
+		</div>
+	</div>
 		<div class="col-md-12 col-centered">
 			<div class="col-sm-6 center" id="about_me">
 				<div class="col-sm-1"></div>
