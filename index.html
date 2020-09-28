@@ -545,26 +545,26 @@
 			z-index: 1;
 			position: relative;
 			background: #fff;
-			padding-top: 10vh;
+			padding-top: 7vh;
 		}
 
-		#project .text h1 {
+		#project .text h1,
+		#contact .text h1 {
 			font-size: 60px;
 			font-weight: bold;
-			color: #111;
+			color: #333;
 			margin: 5vh auto;
 		}
 	</style>
 
 	<style>
-		#contact a {
+		#footer a {
 			text-decoration: none;
 			color: #b3b3b3;
 		}
 
-		#contact {
+		#footer {
 			font-size: 20px;
-			background: #000000;
 			color: #b3b3b3;
 			margin: 0;
 			transition: ALL .6s;
@@ -573,11 +573,11 @@
 			padding: 5vh 0;
 		}
 
-		#contact i {
+		#footer i {
 			cursor: pointer;
 		}
 
-		#contact h1 {
+		#footer h1 {
 			font-size: 30px;
 			color: #fff;
 		}
@@ -621,29 +621,29 @@
 			margin: 10px;
 		}
 
-		#contact .col-sm-10 {
+		#footer .col-sm-10 {
 			padding: 10px;
 		}
 
-		#contact .col-sm-6 {
+		#footer .col-sm-6 {
 			margin: 30px 0;
 		}
 
-		#contact footer {
+		#footer footer {
 			text-align: center;
 		}
 
-		#contact footer p {
+		#footer footer p {
 			display: inline-block;
 		}
 
-		#contact .clearfix {
+		#footer .clearfix {
 			content: "";
 			display: table;
 			clear: both;
 		}
 
-		#contact .contact_footer i {
+		#footer .contact_footer i {
 			color: #fff;
 		}
 	</style>
@@ -685,18 +685,15 @@
 		}
 	</style>
 	<style>
-		.down_scroller{
+		.down_scroller {
 			position: absolute;
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
 		}
+
 		#contact .col-md-8 {
 			padding: 0;
-		}
-
-		.row {
-			margin: 0;
 		}
 
 		#contact .col-md-6,
@@ -730,19 +727,33 @@
 			border-radius: 50px;
 			width: 65%;
 			background: RGB(61, 100, 255);
-			padding: 10px;
 			color: #fff;
 			border: none;
 			font-size: 25px;
-			border: 3px solid transparent;
 			outline: none;
 			text-align: center;
 		}
 
 
-		#contact input[type=submit]:hover {
+		#contact input[type=submit]:focus,
+		#contact input[type=submit]:active {
 			box-shadow: 0px 0px 0 0.4rem rgba(80, 191, 230, 0.4);
-			outline: 0;
+		}
+
+		#contact {
+			background-color: #fff;
+		}
+
+		#contact {
+			text-align: center;
+			margin: 0 auto 5vh;
+			padding-top: 7vh;
+		}
+
+		#footer {
+			background: #000;
+			overflow: hidden;
+			margin-top: 5vh;
 		}
 	</style>
 </head>
@@ -778,11 +789,11 @@
 					<span class="txt-rotate" data-period="2000" data-rotate='[ "Data Science Freak.", "Developer.", "Community Builder.", "Blogger." ]'></span>
 				</h2>
 			</div>
-			
+
 		</main>
-<div class="down_scroller">
-				<button>+</button>
-			</div>
+		<div class="down_scroller">
+			<button>+</button>
+		</div>
 	</div>
 	<div class="row" id="resume">
 
@@ -1106,19 +1117,22 @@
 		</div>
 	</div>
 	<div id="contact" class="container-fluid">
-	<div class="first">
-		<div class="col-md-2 col-xs-1"></div>
-		<div class="col-md-8 col-xs-10">
+		<div class="text text-center">
+			<h1>Contact</h1>
+		</div>
+
+		<div class="col-md-2 col-sm-1"></div>
+		<div class="col-md-8 col-sm-10">
 			<form action="">
 				<div class="col-md-6">
 					<input type="text" placeholder="Name" required>
 				</div>
 				<div class="col-md-6">
-					<input type="email" placeholder="E-mail" required>
+					<input type="email" id="mail" placeholder="E-mail" required>
 
 				</div>
 				<div class="col-md-12">
-					<textarea rows="5" placeholder="Your Message" required></textarea>
+					<textarea rows="5" id="msg" placeholder="Your Message" required></textarea>
 				</div>
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
@@ -1128,10 +1142,13 @@
 			</form>
 
 		</div>
-		<div class="col-md-2 col-xs-1">
+		<div class="col-md-2 col-sm-1">
 
 		</div>
 	</div>
+	<div id="footer">
+
+
 		<div class="col-md-12 col-centered">
 			<div class="col-sm-6 center" id="about_me">
 				<div class="col-sm-1"></div>
