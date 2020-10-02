@@ -10,6 +10,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous">
 	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<style>
 		* {
 			margin: 0;
@@ -548,8 +549,7 @@
 			padding-top: 7vh;
 		}
 
-		#project .text h1,
-		#contact .text h1 {
+		.text h1 {
 			font-size: 60px;
 			font-weight: bold;
 			color: #333;
@@ -685,13 +685,6 @@
 		}
 	</style>
 	<style>
-		.down_scroller {
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
 		#contact .col-md-8 {
 			padding: 0;
 		}
@@ -756,6 +749,99 @@
 			margin-top: 5vh;
 		}
 	</style>
+	<style>
+		#about {
+			position: relative;
+			padding: 10vh 5vw;
+		}
+
+
+		#about p {
+			padding: 0 10px;
+			line-height: 3.5rem;
+			text-align: justify;
+		}
+
+		#about .col-md-5 {
+			text-align: center;
+			position: absolute;
+			right: 0;
+			top: 55%;
+			transform: translateY(-55%);
+		}
+
+		#about .col-md-5 div {
+			border-radius: 100%;
+			height: 45vw;
+			width: 45vw;
+			max-height: 300px;
+			max-width: 300px;
+			margin: auto;
+			position: relative;
+			box-shadow: 0px 0px 2px #444;
+		}
+
+		#about {
+			margin: 0;
+		}
+
+		#about img {
+			height: 40vw;
+			width: 40vw;
+			max-height: 280px;
+			max-width: 280px;
+			border-radius: 100%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		@media (max-width:992px) {
+			#about .col-md-5 {
+				position: relative;
+				transform: translate(0%, 0%);
+				margin: 20px auto;
+			}
+
+			#about {
+				padding: 0vw;
+			}
+		}
+	</style>
+	<style>
+		.down_scroller {
+			position: absolute;
+			bottom: 2%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.down_scroller a i {
+			font-size: 30px;
+			color: RGB(61, 100, 255);
+			animation-name: down;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes down {
+			0% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+
+			50% {
+				-webkit-transform: translate(0, 10px);
+				transform: translate(0, 10px);
+			}
+
+			100% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+		}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="100">
@@ -792,7 +878,21 @@
 
 		</main>
 		<div class="down_scroller">
-			<button>+</button>
+			<a href="#about"><i class='fas fa-arrow-down'></i></a>
+		</div>
+	</div>
+	<div class="row" id="about">
+		<div class="text text-center">
+			<h1>About</h1>
+		</div>
+		<div class="col-md-12">
+			<div class="col-md-5">
+				<div><img src="https://avatars2.githubusercontent.com/u/57362661?s=400&u=dbeac02ff59b4112e8b9e12f33192f5967c41770&v=4" alt=""></div>
+
+			</div>
+			<div class="col-md-7">
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat met, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+			</div>
 		</div>
 	</div>
 	<div class="row" id="resume">
@@ -1200,7 +1300,7 @@
 	</div>
 	<script>
 		$(document).ready(function() {
-			$("#resume").waypoint(
+			$("#about").waypoint(
 				function(direction) {
 					if (direction == "down") {
 						$("header").addClass("sticky");
@@ -1314,7 +1414,7 @@
 		}
 		window.addEventListener("scroll", () => {
 			var windo = window.pageYOffset;
-			var a = document.querySelector("#home").offsetHeight;
+			var a = document.querySelector("#resume").offsetTop;
 			let h = window.innerHeight / 2 - a;
 			if ((education.offsetTop - h) <= windo && (skills.offsetTop - h) > windo) {
 				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
@@ -1336,11 +1436,12 @@
 	</script>
 	<script>
 		window.onscroll = function() {
-			let a = document.querySelector("#home");
+			let a = document.querySelector("#resume");
 			let c = document.querySelector("#project");
 			let b = window.pageYOffset;
-			if (b >= a.offsetHeight && b <= c.offsetTop - window.innerHeight) {
+			if (b >= a.offsetTop && b <= c.offsetTop - window.innerHeight) {
 				document.querySelector(".abs").classList.add("fix");
+				//document.querySelector("#about").style.paddingTop="1000px";
 			} else {
 				if (document.querySelector(".fix"))
 					document.querySelector(".fix").classList.remove("fix");
@@ -1371,3 +1472,9 @@
 </body>
 
 </html>
+<!--
+</html>
+https://codepen.io/Pharoxx/pen/qaYGAE
+
+
+https://codepen.io/sarath-ar/pen/dMKxxM-->
