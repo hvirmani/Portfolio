@@ -3,845 +3,18 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Harshit</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous">
+
 	</script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			transition: all 0.6s;
-			outline: none;
-			scroll-behavior: smooth;
-		}
-
-		body {
-			font-family: poppins;
-			font-size: 25px;
-			color: #444;
-			transition: all .1s;
-		}
-
-		#home {
-			min-height: 100vh;
-			background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'), linear-gradient(90deg, #edf0ff 50%, #fff 50%);
-			background-position: center;
-			background-size: 3%, 100% 100%;
-			z-index: 2;
-			position: relative;
-		}
-
-		main {
-			position: absolute;
-			top: 45%;
-			left: 50%;
-			transform: translate(-45%, -50%);
-			color: #111;
-		}
-
-		header {
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-		}
-
-		.sticky {
-			transition: all .6s;
-			background: #fff;
-			box-shadow: 0px 0px 2px #444;
-			position: fixed;
-			top: 0;
-			width: 100%;
-			z-index: 5;
-		}
-
-		.logo,
-		.navigation {
-			flex: 50%;
-			margin: 0;
-		}
-
-		.logo {
-			font-size: 30px;
-			font-weight: 800;
-			text-align: center;
-			display: flex;
-		}
-
-		.navigation {
-			padding: 2vh 0;
-			font-size: calc(9px + 1vw);
-		}
-
-		.logo div {
-			flex: 50%;
-		}
-
-		#logo {
-			display: inline-block;
-			position: relative;
-			height: 50px;
-			width: 50px;
-			background: RGB(61, 100, 255);
-			border-radius: 100%;
-			position: relative;
-			top: 50%;
-			left: 0%;
-			transform: translate(-70%, -50%);
-		}
-
-		#logo p {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: #fff;
-		}
-
-		#logo p:after {
-			position: absolute;
-			content: "arshit";
-			top: 50%;
-			left: 100%;
-			transform: translateY(-50%);
-			color: #444;
-		}
-
-		header a,
-		header a:hover {
-			color: #444;
-		}
-
-		header a:after {
-			content: '';
-			position: absolute;
-			left: 50%;
-			bottom: 10%;
-			transform: translateX(-50%) scaleX(0);
-			transform-origin: 50% 50%;
-			height: 2.4px;
-			width: 70%;
-			background-color: RGB(61, 100, 255);
-			transition: transform 0.4s;
-		}
-
-		header a:hover:after {
-			transform: translateX(-50%) scaleX(1);
-		}
-
-		header .active a {
-			color: RGB(61, 100, 255);
-		}
-
-		header li:nth-child(1) a {
-			color: #444;
-		}
-
-		header li:nth-child(1) a:after {
-			transform: translateX(-50%) scaleX(0);
-		}
-
-		header li:nth-child(1) a:hover:after {
-			transform: translateX(-50%) scaleX(1);
-		}
-
-		header .active a:after,
-		a:hover:after {
-			transform: translateX(-50%) scaleX(1);
-		}
-
-		header li:nth-child(n) a:hover,
-		header li:nth-child(n) a:focus {
-			background: inherit;
-		}
-
-		header a:hover {
-			text-decoration: none;
-		}
-
-		header #toggle_container {
-			display: none;
-		}
-
-		navbar {
-			position: relative;
-		}
-
-		@media (min-width:992px) {
-			header navbar .nav {
-				float: none;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-
-		header .navigation {
-			z-index: 8;
-		}
-
-		header .logo div {
-			position: relative;
-		}
-
-		@media (max-width:992px) {
-			header {
-				flex-direction: column;
-			}
-
-			#logo {
-				top: 0%;
-				transform: translate(-70%, 0%);
-			}
-
-			header a:after {
-				width: 50vw;
-				max-width: calc(2.5vw + 70px);
-			}
-
-			header .navigation {
-				padding: 0;
-				font-size: calc(20px + 0.5vw);
-			}
-
-			header .nav,
-			header .navbar-nav {
-				display: block;
-				text-align: center;
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				background: #fff;
-			}
-
-			header .logo div {
-				padding: 10px 0 0;
-			}
-
-			header li {
-				width: 100%;
-				text-align: justify-all;
-			}
-
-			header .navbar-nav {
-				overflow: hidden;
-				max-height: 0;
-				transition: padding 0.01s;
-			}
-
-			header .nav_toggle {
-				max-height: 500px;
-				padding-bottom: 1vh;
-			}
-
-			header #toggle_container {
-				display: block;
-				position: relative;
-
-			}
-
-			header button {
-				height: 40px;
-				width: 40px;
-				font-size: 28px;
-				padding: 0;
-				margin: 0;
-				border: none;
-				background: inherit;
-				position: relative;
-				left: 40%;
-				transform: translate(-100%, 10%);
-			}
-
-			header button:before {
-				content: '\f0c9';
-				font-family: fontAwesome;
-			}
-
-			header button.toggled:before {
-				content: '\f00d';
-			}
-		}
-
-		#home main h1 {
-			font-size: 50px;
-			font-weight: 700;
-		}
-
-		#home main h2 {
-			font-size: 30px;
-			font-weight: bold;
-		}
-
-		.txt-rotate {
-			color: RGB(61, 100, 255);
-			text-decoration: underline;
-		}
-	</style>
-
-	<style>
-		#project {
-			margin: 0;
-			font-family: Montserrat;
-			font-size: 50px;
-			color: #fff;
-			z-index: 5;
-		}
-
-		#project .col-lg-4 {
-			background: url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			height: 45vh;
-			min-height: 300px;
-			position: relative;
-			transition: all .6s;
-			padding: 0;
-		}
-
-		@media (max-width:768px) {
-			#project {
-				padding: 0 2.5vw;
-			}
-		}
-
-		#project .description {
-			position: absolute;
-			width: 100%;
-			left: 0;
-			top: 45%;
-			transform: translateY(-50%);
-			text-align: center;
-			padding: 10px;
-			opacity: 0;
-			transition: all 0.8s;
-			z-index: 1;
-			margin: 10px 0;
-		}
-
-		#project .description div span {
-			font-size: 50px;
-			margin: 0 10px;
-		}
-
-		#project a {
-			display: inline-block;
-			background: rgba(0, 0, 0, 0.5);
-			padding: 0px;
-			border-radius: 100%;
-			font-size: 42px;
-			height: 60px;
-			width: 60px;
-		}
-
-		#project .col-sm-6:hover .description {
-			opacity: 1;
-		}
-
-		#project .col-sm-6::after {
-			content: "";
-			background: linear-gradient(RGB(61, 100, 255, 0.9), RGB(61, 100, 255, 0.9)), url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
-			background-size: cover;
-			background-position: center;
-			opacity: 0;
-			transition: opacity 0.6s ease-in-out;
-			display: flex;
-			width: 100%;
-			height: 100%;
-			margin: 0;
-		}
-
-		#project .col-sm-6:hover::after {
-			opacity: 1;
-		}
-
-		#project i {
-			color: rgb(255, 255, 255, 0.5);
-			cursor: pointer;
-		}
-	</style>
-	<style>
-		#resume {
-			font-family: poppins;
-			font-size: 20px;
-			margin: 0;
-			text-align: left;
-			z-index: 1;
-			position: relative;
-		}
-
-		#education,
-		#skills,
-		#volunteer,
-		#certificates {
-			padding: 0 calc(10px + 1.5vw);
-			padding-top: 10vh;
-		}
-
-		.education,
-		.skills,
-		.volunteer,
-		.certificates {
-			display: flex;
-			flex-direction: row;
-		}
-
-		#resume .icon p {
-			background: RGB(61, 100, 255);
-			display: inline-block;
-			height: 50px;
-			width: 50px;
-			font-size: 40px;
-			margin: 0;
-			margin-right: 20px;
-			border-radius: 100%;
-			position: relative;
-		}
-
-		#resume .icon p i {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: #fff;
-		}
-
-		#resume .info p:nth-child(1) {
-			margin-bottom: 0;
-			color: RGB(61, 100, 255);
-			font-weight: bold;
-		}
-
-		#resume .info p:nth-child(2) {
-			font-size: 25px;
-		}
-
-		#resume #certificates .info p:nth-child(1) {
-			font-size: 25px;
-			color: RGB(61, 100, 255);
-		}
-
-		#resume .col-sm-8 {
-			padding: 2vh 5vw;
-		}
-
-		#resume #certificates .info p:nth-child(2) {
-			font-size: 20px;
-		}
-
-		#resume .col-sm-4 {
-			position: relative;
-		}
-
-		#resume .navigation {
-			position: fixed;
-			top: 45%;
-			left: 0;
-			width: 33.33%;
-			transform: translateY(-45%);
-			z-index: 5;
-			padding-left: calc(15vw - 110px);
-			text-align: justify-all;
-		}
-
-		#resume li a::before {
-			content: "";
-			padding: 0 5px;
-			font-size: 25px;
-			opacity: 0;
-			width: 0%;
-			transition-delay: 0.1s;
-		}
-
-		#resume li.current a::before {
-			content: "—";
-			opacity: 1;
-			width: 100%;
-		}
-
-		#resume ul {
-			margin: 0;
-		}
-
-		#resume li:hover {
-			transition: all 0.001s;
-			font-size: 26px;
-		}
-
-		#resume li:nth-child(n) a:hover {
-			background: inherit;
-		}
-
-		#resume a {
-			color: #111;
-			font-size: 25px;
-			font-weight: bold;
-		}
-
-		#resume a::before {
-			color: RGB(61, 100, 255);
-		}
-
-		#resume .current a {
-			color: RGB(61, 100, 255);
-		}
-
-		#resume {
-			text-align: justify;
-		}
-
-		@media (max-width:768px) {
-			#resume .col-sm-4 {
-				display: none;
-			}
-
-			#resume .col-sm-8 {
-				padding: 2vh calc(2vw + 10px);
-				text-align: left;
-
-			}
-		}
-
-		#resume li {
-			left: -5%;
-		}
-
-		#resume .current {
-			left: 0%;
-		}
-
-		#resume h1 {
-			color: RGB(61, 100, 255);
-			font-weight: 700;
-			font-size: 40px;
-			margin-bottom: 5vh;
-		}
-
-		#resume hr {
-			background: RGB(61, 100, 255);
-			width: 100%;
-			text-align: center;
-			margin: auto;
-			height: 0.5px;
-			margin-bottom: 50px;
-		}
-
-		.background {
-			background: #fff;
-		}
-
-		#resume {
-			padding-top: 5vh;
-		}
-
-		#project {
-			z-index: 1;
-			position: relative;
-			background: #fff;
-			padding-top: 7vh;
-		}
-
-		.text h1 {
-			font-size: 60px;
-			font-weight: bold;
-			color: #333;
-			margin: 5vh auto;
-		}
-	</style>
-
-	<style>
-		#footer a {
-			text-decoration: none;
-			color: #b3b3b3;
-		}
-
-		#footer {
-			font-size: 20px;
-			color: #b3b3b3;
-			margin: 0;
-			transition: ALL .6s;
-			position: relative;
-			z-index: 1;
-			padding: 5vh 0;
-		}
-
-		#footer i {
-			cursor: pointer;
-		}
-
-		#footer h1 {
-			font-size: 30px;
-			color: #fff;
-		}
-
-		#about_me a {
-			display: inline-block;
-			font-size: 26px;
-			background: #1a1a1a;
-			border-radius: 100%;
-			text-align: center;
-			width: 48px;
-			height: 48px;
-			padding: 6px;
-			margin: 5px;
-		}
-
-		#about_me a:hover i {
-			color: #ccc;
-		}
-
-		#about_me p,
-		#about_me social {
-			margin: calc(10px) auto;
-		}
-
-		.contact_footer div {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: center;
-			word-break: break-all;
-		}
-
-		.contact_footer div p:nth-child(1) {
-			flex: 2%;
-			margin: 10px;
-		}
-
-		.contact_footer div p:nth-child(2) {
-			flex: 95%;
-			margin: 10px;
-		}
-
-		#footer .col-sm-10 {
-			padding: 10px;
-		}
-
-		#footer .col-sm-6 {
-			margin: 30px 0;
-		}
-
-		#footer footer {
-			text-align: center;
-		}
-
-		#footer footer p {
-			display: inline-block;
-		}
-
-		#footer .clearfix {
-			content: "";
-			display: table;
-			clear: both;
-		}
-
-		#footer .contact_footer i {
-			color: #fff;
-		}
-	</style>
-	<style>
-		#resume {
-			position: relative;
-		}
-
-		#resume .col-sm-4 {
-			min-height: 100vh;
-			position: relative;
-			transition: all 0s;
-		}
-
-		#resume .abs {
-			position: absolute;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-			z-index: 5;
-			width: 100%;
-			padding-left: calc(15vw - 100px);
-			text-align: justify-all;
-			transition: all 0s;
-		}
-
-		#resume .fix {
-			position: fixed;
-			width: 33.33%;
-			top: 10%;
-			left: 0;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-		}
-
-		#resume .side_affix {
-			margin-top: 0;
-		}
-	</style>
-	<style>
-		#contact .col-md-8 {
-			padding: 0;
-		}
-
-		#contact .col-md-6,
-		#contact .col-md-12 {
-			margin: calc(10px + 1.5vh) auto;
-		}
-
-		#contact input,
-		#contact textarea {
-			width: 100%;
-			text-align: justify;
-			border-radius: 3px;
-			border: none;
-			padding: 15px 20px;
-			background: #efefef;
-			border-bottom: 2px solid white;
-			word-break: break-all;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			resize: none;
-		}
-
-		#contact input:focus,
-		#contact textarea:focus {
-			border: none;
-			outline: none;
-			border-bottom: 3px solid RGB(61, 100, 255);
-		}
-
-		#contact input[type=submit] {
-			border-radius: 50px;
-			width: 65%;
-			background: RGB(61, 100, 255);
-			color: #fff;
-			border: none;
-			font-size: 25px;
-			outline: none;
-			text-align: center;
-		}
-
-
-		#contact input[type=submit]:focus,
-		#contact input[type=submit]:active {
-			box-shadow: 0px 0px 0 0.4rem rgba(80, 191, 230, 0.4);
-		}
-
-		#contact {
-			background-color: #fff;
-		}
-
-		#contact {
-			text-align: center;
-			margin: 0 auto 5vh;
-			padding-top: 7vh;
-		}
-
-		#footer {
-			background: #000;
-			overflow: hidden;
-			margin-top: 5vh;
-		}
-	</style>
-	<style>
-		#about {
-			position: relative;
-			padding: 10vh 5vw;
-		}
-
-
-		#about p {
-			padding: 0 10px;
-			line-height: 3.5rem;
-			text-align: justify;
-		}
-
-		#about .col-md-5 {
-			text-align: center;
-			position: absolute;
-			right: 0;
-			top: 55%;
-			transform: translateY(-55%);
-		}
-
-		#about .col-md-5 div {
-			border-radius: 100%;
-			height: 45vw;
-			width: 45vw;
-			max-height: 300px;
-			max-width: 300px;
-			margin: auto;
-			position: relative;
-			box-shadow: 0px 0px 2px #444;
-		}
-
-		#about {
-			margin: 0;
-		}
-
-		#about img {
-			height: 40vw;
-			width: 40vw;
-			max-height: 280px;
-			max-width: 280px;
-			border-radius: 100%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		@media (max-width:992px) {
-			#about .col-md-5 {
-				position: relative;
-				transform: translate(0%, 0%);
-				margin: 20px auto;
-			}
-
-			#about {
-				padding: 0vw;
-			}
-		}
-	</style>
-	<style>
-		.down_scroller {
-			position: absolute;
-			bottom: 2%;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		.down_scroller a i {
-			font-size: 30px;
-			color: RGB(61, 100, 255);
-			animation-name: down;
-			animation-duration: 4s;
-			animation-iteration-count: infinite;
-		}
-
-		@keyframes down {
-			0% {
-				-webkit-transform: translate(0, 0);
-				transform: translate(0, 0);
-			}
-
-			50% {
-				-webkit-transform: translate(0, 10px);
-				transform: translate(0, 10px);
-			}
-
-			100% {
-				-webkit-transform: translate(0, 0);
-				transform: translate(0, 0);
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="100">
@@ -883,14 +56,14 @@
 	</div>
 	<div class="row" id="about">
 		<div class="text text-center">
-			<h1>About</h1>
+			<h1 data-aos="fade-up" data-aos-duration="500">About</h1>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-12" data-aos="fade-up" data-aos-duration="1000">
 			<div class="col-md-5">
 				<div><img src="https://avatars2.githubusercontent.com/u/57362661?s=400&u=dbeac02ff59b4112e8b9e12f33192f5967c41770&v=4" alt=""></div>
 
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-7" data-aos="fade-up" data-aos-duration="1000">
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat met, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
 			</div>
 		</div>
@@ -907,7 +80,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-sm-8 aside_affix">
+		<div class="col-sm-8 aside_affix" data-aos="fade-left" data-aos-duration="500">
 			<div id="education">
 				<h1>Education</h1>
 				<div class="education">
@@ -930,12 +103,7 @@
 					</div>
 
 				</div>
-				<hr style="background: RGB(61, 100, 255);
-			width: 100%;
-			text-align: center;
-			margin: auto;
-			height: 0.5px;
-			margin-bottom: 50px;">
+				<hr>
 				<div class="education">
 					<div class='icon'>
 						<p>
@@ -1144,10 +312,10 @@
 		</div>
 	</div>
 	<div class="row" id="project">
-		<div class="text text-center">
+		<div class="text text-center" data-aos="fade-up" data-aos-duration="500">
 			<h1>Projects</h1>
 		</div>
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 
 			<div class="description">
 				<h1>
@@ -1160,7 +328,7 @@
 			</div>
 		</div>
 
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -1171,7 +339,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -1182,7 +350,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -1193,7 +361,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -1204,7 +372,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6">
+		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
 			<div class="description">
 				<h1>
 					Coronavirus Tracker
@@ -1218,25 +386,25 @@
 	</div>
 	<div id="contact" class="container-fluid">
 		<div class="text text-center">
-			<h1>Contact</h1>
+			<h1 data-aos="fade-up" data-aos-duration="500">Contact</h1>
 		</div>
 
 		<div class="col-md-2 col-sm-1"></div>
-		<div class="col-md-8 col-sm-10">
+		<div class="col-md-8 col-sm-10" data-aos="fade-up" data-aos-duration="500">
 			<form id="form" onsubmit="clr();" method="post">
 				<div class="col-md-6">
-					<input type="text" id="name" placeholder="Name" required>
+					<input type="text" id="name" placeholder="Name" required data-aos="fade-right" data-aos-duration="800">
 				</div>
 				<div class="col-md-6">
-					<input type="email" id="mail" placeholder="E-mail" required>
+					<input type="email" id="mail" placeholder="E-mail" required data-aos="fade-left" data-aos-duration="800">
 
 				</div>
 				<div class="col-md-12">
-					<textarea rows="5" id="msg" onkeydown="snd();" placeholder="Your Message" required></textarea>
+					<textarea rows="5" id="msg" onkeydown="snd();" placeholder="Your Message" required data-aos="fade-up" data-aos-duration="1000"></textarea>
 				</div>
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<input type="submit">
+					<input type="submit" data-aos="fade-up" data-aos-duration="1000">
 				</div>
 				<div class="col-md-4"></div>
 			</form>
@@ -1250,14 +418,14 @@
 
 
 		<div class="col-md-12 col-centered">
-			<div class="col-sm-6 center" id="about_me">
+			<div class="col-sm-6 center" id="about_me" data-aos="fade-right" data-aos-duration="500">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10 description">
 					<h1>About</h1>
-					<p>
+					<p data-aos="fade-up" data-aos-duration="800">
 						A Data-Science Freak, actively looking for suitable opportunities.
 					</p>
-					<div class="social">
+					<div class="social" data-aos="fade-up" data-aos-duration="1000">
 						<a href=""><i class="fa fa-github"></i></a>
 						<a href=""><i class="fa fa-instagram"></i></a>
 						<a href=""><i class="fa fa-linkedin"></i></a>
@@ -1268,20 +436,20 @@
 
 			</div>
 
-			<div class="col-sm-6 center" id="contact_me">
+			<div class="col-sm-6 center" id="contact_me" data-aos="fade-left" data-aos-duration="500">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10 description">
 					<h1>Have Questions?</h1>
 					<div class="contact_footer">
-						<div>
+						<div data-aos="fade-up" data-aos-duration="500">
 							<p><i class="fa fa-map-marker"></i></p>
 							<p>Yamunanagar,India</p>
 						</div>
-						<div>
+						<div data-aos="fade-up" data-aos-duration="800">
 							<p><a href="tel:8529199089"><i class="fa fa-phone"></i></a></p>
 							<p><a href="tel:8529199089">+(91) 8529199089</a></p>
 						</div>
-						<div>
+						<div data-aos="fade-up" data-aos-duration="1000">
 							<p><a href="mailto:officialhvirmani@gmail.com"><i class="fa fa-envelope"></i></a></p>
 							<p><a href="mailto:officialhvirmani@gmail.com">officialhvirmani@gmail.com</a></p>
 						</div>
@@ -1293,188 +461,17 @@
 		<div class="clearfix">
 
 		</div>
-		<footer>
-			<p>Copyright ©2020 All rights reserved </p>&nbsp;|&nbsp;<p>Made with❤ by Harshit</p>
+		<footer data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+			<p>Copyright ©2020 All rights reserved </p>&nbsp;|&nbsp;<p>Made with❤ by <a href="https://github.com/hvirmani">Harshit</a></p>
 		</footer>
 
 	</div>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+	<script src="file.js"></script>
 	<script>
-		$(document).ready(function() {
-			$("#about").waypoint(
-				function(direction) {
-					if (direction == "down") {
-						$("header").addClass("sticky");
-						$(".sticky").fadeIn();
-					} else {
-						$("header").removeClass("sticky");
-					}
-				}, {
-					offset: "10vh",
-				});
-		})
-	</script>
-	<script>
-		function toggle() {
-			$(document).ready(function() {
-				let a = document.querySelector(".navbar-nav");
-				let b = document.querySelector("#tog");
-				a.classList.toggle("nav_toggle");
-				b.classList.toggle("toggled");
-				let c = document.querySelector("header");
-				c.classList.toggle("background");
-			});
-		}
-	</script>
-	<script>
-		var TxtRotate = function(el, toRotate, period) {
-			this.toRotate = toRotate;
-			this.el = el;
-			this.loopNum = 0;
-			this.period = parseInt(period, 10) || 2000;
-			this.txt = '';
-			this.tick();
-			this.isDeleting = false;
-		};
-
-		TxtRotate.prototype.tick = function() {
-			var i = this.loopNum % this.toRotate.length;
-			var fullTxt = this.toRotate[i];
-
-			if (this.isDeleting) {
-				this.txt = fullTxt.substring(0, this.txt.length - 1);
-			} else {
-				this.txt = fullTxt.substring(0, this.txt.length + 1);
-			}
-
-			this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-			var that = this;
-			var delta = 300 - Math.random() * 100;
-
-			if (this.isDeleting) {
-				delta /= 2;
-			}
-
-			if (!this.isDeleting && this.txt === fullTxt) {
-				delta = this.period;
-				this.isDeleting = true;
-			} else if (this.isDeleting && this.txt === '') {
-				this.isDeleting = false;
-				this.loopNum++;
-				delta = 500;
-			}
-
-			setTimeout(function() {
-				that.tick();
-			}, delta);
-		};
-
-		window.onload = function() {
-			var elements = document.getElementsByClassName('txt-rotate');
-			for (var i = 0; i < elements.length; i++) {
-				var toRotate = elements[i].getAttribute('data-rotate');
-				var period = elements[i].getAttribute('data-period');
-				if (toRotate) {
-					new TxtRotate(elements[i], JSON.parse(toRotate), period);
-				}
-			}
-			// INJECT CSS
-			var css = document.createElement("style");
-			css.type = "text/css";
-			css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-			document.body.appendChild(css);
-		};
-	</script>
-
-	<script>
-		let education = document.querySelector("#education");
-		let skills = document.querySelector("#skills");
-		let volunteer = document.querySelector("#volunteer");
-		let certificates = document.querySelector("#certificates");
-
-		function a() {
-			var windo = window.pageYOffset;
-			let h = -window.innerHeight / 2;
-			if ((education.offsetTop - h) <= windo && (skills.offsetTop - h) > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-
-				document.querySelector(".e").classList.add("current");
-			} else if (skills.offsetTop - h <= windo && volunteer.offsetTop - h > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".s").classList.add("current");
-			} else if (volunteer.offsetTop - h <= windo && certificates.offsetTop - h > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".v").classList.add("current");
-			} else if (certificates.offsetTop - h <= windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".c").classList.add("current");
-			} else {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-			}
-		}
-		window.addEventListener("scroll", () => {
-			var windo = window.pageYOffset;
-			var a = document.querySelector("#resume").offsetTop;
-			let h = window.innerHeight / 2 - a;
-			if ((education.offsetTop - h) <= windo && (skills.offsetTop - h) > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-
-				document.querySelector(".e").classList.add("current");
-			} else if (skills.offsetTop - h <= windo && volunteer.offsetTop - h > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".s").classList.add("current");
-			} else if (volunteer.offsetTop - h <= windo && certificates.offsetTop - h > windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".v").classList.add("current");
-			} else if (certificates.offsetTop - h <= windo) {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-				document.querySelector(".c").classList.add("current");
-			} else {
-				if (document.querySelector(".current")) document.querySelector(".current").classList.remove("current");
-			}
-		})
-	</script>
-	<script>
-		window.onscroll = function() {
-			let a = document.querySelector("#resume");
-			let c = document.querySelector("#project");
-			let b = window.pageYOffset;
-			if (b >= a.offsetTop && b <= c.offsetTop - window.innerHeight) {
-				document.querySelector(".abs").classList.add("fix");
-				//document.querySelector("#about").style.paddingTop="1000px";
-			} else {
-				if (document.querySelector(".fix"))
-					document.querySelector(".fix").classList.remove("fix");
-				if (b >= c.offsetTop - window.innerHeight) {
-					let e = document.querySelector(".aside_affix").offsetHeight - window.innerHeight;
-					document.querySelector(".side_affix").style.marginTop = `${e}px`;
-
-				} else {
-					document.querySelector(".side_affix").style.marginTop = "0px";
-				}
-			}
-		}
-	</script>
-	<script>
-		function snd() {
-			let msg = document.querySelector("#msg").value;
-			let add = `mailto:officialhvirmani@gmail.com?body=${msg}`;
-
-			document.querySelector("#form").action = add;
-		}
-
-		function clr() {
-			let name = document.querySelector("#name").value = "";
-			let mail = document.querySelector("#mail").value = "";
-			let msg = document.querySelector("#msg").value = "";
-		}
+		AOS.init();
 	</script>
 </body>
 
 </html>
-<!--
-</html>
-https://codepen.io/Pharoxx/pen/qaYGAE
-
-
-https://codepen.io/sarath-ar/pen/dMKxxM-->
