@@ -547,7 +547,7 @@
 			width: 100%;
 			left: 0;
 			top: 45%;
-			transform: translateY(-50%);
+			transform: translateY(-45%);
 			text-align: center;
 			padding: 10px;
 			opacity: 0;
@@ -566,9 +566,26 @@
 			background: rgba(0, 0, 0, 0.5);
 			padding: 0px;
 			border-radius: 100%;
-			font-size: 42px;
-			height: 60px;
-			width: 60px;
+			font-size: 25px;
+			height: 50px;
+			width: 50px;
+			margin: auto 10px;
+			position: relative;
+		}
+
+		#project a i {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#project a i:hover {
+			color: rgb(255, 255, 255, 0.8);
+		}
+
+		#project .description h1 {
+			margin-bottom: 5vh;
 		}
 
 		#project .col-sm-6:hover .description {
@@ -577,7 +594,7 @@
 
 		#project .col-sm-6::after {
 			content: "";
-			background: linear-gradient(RGB(61, 100, 255, 0.9), RGB(61, 100, 255, 0.9)), url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
+			background: linear-gradient(RGB(61, 100, 255, 0.95), RGB(61, 100, 255, 0.95)), url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
 			background-size: cover;
 			background-position: center;
 			opacity: 0;
