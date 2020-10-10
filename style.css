@@ -322,7 +322,7 @@
 		}
 
 		#resume {
-			font-size: 20px;
+			font-size: 18px;
 			margin: 0;
 			text-align: left;
 			z-index: 1;
@@ -350,9 +350,8 @@
 			display: inline-block;
 			height: 50px;
 			width: 50px;
-			font-size: 40px;
-			margin: 0;
-			margin-right: 20px;
+			font-size: 25px;
+			margin: 5px 20px 0 0;
 			border-radius: 100%;
 			position: relative;
 		}
@@ -368,24 +367,50 @@
 		#resume .info p:nth-child(1) {
 			margin-bottom: 0;
 			color: RGB(61, 100, 255);
-			font-weight: bold;
+			font-size: 20px;
+			font-weight: bolder;
+			margin-bottom: 2px;
 		}
 
 		#resume .info p:nth-child(2) {
-			font-size: 25px;
+			font-size: 22px;
+			font-weight: 600;
 		}
 
-		#resume #certificates .info p:nth-child(1) {
-			font-size: 25px;
-			color: RGB(61, 100, 255);
+		#resume #education .info p:nth-child(2) {
+			margin: 5px auto;
 		}
 
-		#resume .col-sm-8 {
-			padding: 2vh 5vw;
+		#resume #education .info p:nth-child(3),
+		#resume #volunteer .info p:nth-child(2) {
+			margin-bottom: 5px;
+		}
+
+		#resume .info p:nth-child(3),
+		#resume #skills .info p:nth-child(2) {
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		#resume .info p:nth-child(4) {
+			font-weight: 500;
+		}
+
+		#resume #skills .info p:nth-child(1) {
+			font-size: 23px;
+			margin-bottom: 2px;
+		}
+
+		#resume #volunteer .info p:nth-child(3) {
+			font-weight: 500;
 		}
 
 		#resume #certificates .info p:nth-child(2) {
 			font-size: 20px;
+		}
+
+		#resume .col-sm-8 {
+			padding: 2vh 5vw;
 		}
 
 		#resume .col-sm-4 {
@@ -799,7 +824,10 @@
 
 		#about {
 			position: relative;
-			padding: 10vh 5vw;
+			padding: 5vh 5vw 10vh;
+			font-size: 20px;
+			margin: 0;
+			margin-top: 5vh;
 		}
 
 
@@ -813,7 +841,7 @@
 			text-align: center;
 			position: absolute;
 			right: 0;
-			top: 55%;
+			top: 50%;
 			transform: translateY(-55%);
 		}
 
@@ -826,10 +854,6 @@
 			margin: auto;
 			position: relative;
 			box-shadow: 0px 0px 2px #444;
-		}
-
-		#about {
-			margin: 0;
 		}
 
 		#about img {
