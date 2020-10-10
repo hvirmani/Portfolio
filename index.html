@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">-->
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="100">
@@ -72,7 +72,7 @@
 
 		<div class="col-sm-4 side_affix">
 			<div class="navigation abs">
-				<ul class="nav">
+				<ul class="nav" data-aos="fade-in" data-aos-duration="1500">
 					<li class="e"><a href="#education">Education</a></li>
 					<li class="s"><a href="#skills">Skills</a></li>
 					<li class="v"><a href="#volunteer">Volunteering</a></li>
@@ -86,15 +86,15 @@
 				<div class="education">
 					<div class='icon'>
 						<p>
-							<i class="fa fa-github"></i>
+							<i class="fa fa-university"></i>
 						</p>
 					</div>
 					<div class='info'>
-						<p>Aug. 2019 - May 2021</p>
+						<p>Aug. 2019 - Present</p>
 						<p>
-							Master in Software Engineering
+							B.E in Computer Science and Engineering
 						</p>
-						<p>San Jose State University</p>
+						<p>Chitkara University</p>
 						<p>
 							Relevant Coursework: Enterprise Software Platforms, Software System Engineering, Software Processes, Large Scale Analytics, Data Mining, Big Data Engineering, Deep Learning.
 
@@ -131,13 +131,13 @@
 
 					<div class='icon'>
 						<p>
-							<i class="fa fa-github"></i>
+							<i class="fa fa-code"></i>
 						</p>
 					</div>
 					<div class='info'>
-						<p>Aug. 2019 - May 2021</p>
+						<p>Programming</p>
 						<p>
-							Master in Software Engineering
+							C, C++, JavaScript, Java, Python
 						</p>
 					</div>
 
@@ -147,13 +147,13 @@
 
 					<div class='icon'>
 						<p>
-							<i class="fa fa-github"></i>
+							<i class="fa fa-code"></i>
 						</p>
 					</div>
 					<div class='info'>
-						<p>Aug. 2019 - May 2021</p>
+						<p>Frameworks & Libraries</p>
 						<p>
-							Master in Software Engineering
+							Jquery, Bootstrap4, NodeJs, ExpressJs
 						</p>
 					</div>
 
@@ -163,7 +163,7 @@
 
 					<div class='icon'>
 						<p>
-							<i class="fa fa-github"></i>
+							<i class="fa fa-code"></i>
 						</p>
 					</div>
 					<div class='info'>
@@ -315,23 +315,46 @@
 		<div class="text text-center" data-aos="fade-up" data-aos-duration="500">
 			<h1>Projects</h1>
 		</div>
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
+		<div class="col-lg-4  col-sm-6" id="notes" data-aos="fade-in" data-aos-duration="500">
 
+			<div class="description">
+				<h1>
+					Notes App
+				</h1>
+				<div>
+					<a href="https://hvirmani.github.io/Notes/notes.html"><i class="fa fa-link"></i></a>
+					<a href="https://github.com/hvirmani/Notes"><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4  col-sm-6" id="emojipedia" data-aos="fade-in" data-aos-duration="1000">
 			<div class="description">
 				<h1>
 					Emojipedia
 				</h1>
 				<div>
-					<a><i class="fa fa-link"></i></a>
-					<a><i class="fa fa-github"></i></a>
+					<a href="https://hvirmani.github.io/Emojipedia-/"><i class="fa fa-link"></i></a>
+					<a href="https://github.com/hvirmani/Emojipedia-"><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4  col-sm-6" id="corona-tracker" data-aos="fade-in" data-aos-duration="1500">
+			<div class="description">
+				<h1>
+					Covid-19 Analysis
+				</h1>
+				<div>
+					<a href="https://hvirmani.github.io/Covid-19-Tracker/"><i class="fa fa-link"></i></a>
+					<a href="https://github.com/hvirmani/Covid-19-Tracker"><i class="fa fa-github"></i></a>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
+		<div class="col-lg-4  col-sm-6" id="weather" data-aos="fade-in" data-aos-duration="500">
 			<div class="description">
 				<h1>
-					Coronavirus Tracker
+					Weather App
 				</h1>
 				<div>
 					<a><i class="fa fa-link"></i></a>
@@ -339,50 +362,29 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
+		<div class="col-lg-4  col-sm-6" id="quiz" data-aos="fade-in" data-aos-duration="1000">
 			<div class="description">
 				<h1>
-					Coronavirus Tracker
+					Marvel Quiz
 				</h1>
 				<div>
-					<a><i class="fa fa-link"></i></a>
-					<a><i class="fa fa-github"></i></a>
+					<a href="https://hvirmani.github.io/Marvel-Quiz/quiz.html"><i class="fa fa-link"></i></a>
+					<a href="https://github.com/hvirmani/Marvel-Quiz"><i class="fa fa-github"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
+		<div class="col-lg-4  col-sm-6" id="basic" data-aos="fade-in" data-aos-duration="1500">
 			<div class="description">
 				<h1>
-					Coronavirus Tracker
+					Basic Web Projects
 				</h1>
 				<div>
-					<a><i class="fa fa-link"></i></a>
-					<a><i class="fa fa-github"></i></a>
+					<a href="https://github.com/hvirmani/Basic-Web-Projects"><i class="fa fa-link"></i></a>
+					<a href="https://github.com/hvirmani/Basic-Web-Projects"><i class="fa fa-github"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
-			<div class="description">
-				<h1>
-					Coronavirus Tracker
-				</h1>
-				<div>
-					<a><i class="fa fa-link"></i></a>
-					<a><i class="fa fa-github"></i></a>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4  col-sm-6" data-aos="fade-up" data-aos-duration="500">
-			<div class="description">
-				<h1>
-					Coronavirus Tracker
-				</h1>
-				<div>
-					<a><i class="fa fa-link"></i></a>
-					<a><i class="fa fa-github"></i></a>
-				</div>
-			</div>
-		</div>
+
 	</div>
 	<div id="contact" class="container-fluid">
 		<div class="text text-center">
