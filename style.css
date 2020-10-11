@@ -692,6 +692,10 @@
 			cursor: pointer;
 		}
 
+		#contact form {
+			overflow: hidden;
+		}
+
 		#footer h1 {
 			font-size: 25px;
 			color: #fff;
