@@ -321,6 +321,87 @@
 			}
 		}
 
+		#about {
+			position: relative;
+			padding: 5vh 5vw 10vh;
+			font-size: 20px;
+			margin: 0;
+			margin-top: 5vh;
+		}
+
+
+		#about p {
+			padding: 0 10px;
+			line-height: 3.5rem;
+			text-align: justify;
+		}
+
+		#about .col-md-5 {
+			text-align: center;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-55%);
+		}
+
+		#about .col-md-5 div {
+			border-radius: 100%;
+			height: 45vw;
+			width: 45vw;
+			max-height: 300px;
+			max-width: 300px;
+			margin: auto;
+			position: relative;
+			box-shadow: 0px 0px 2px #444;
+		}
+
+		#about img {
+			height: 40vw;
+			width: 40vw;
+			max-height: 280px;
+			max-width: 280px;
+			border-radius: 100%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		@media (max-width:992px) {
+			#about .col-md-5 {
+				position: relative;
+				transform: translate(0%, 0%);
+				margin: 20px auto;
+			}
+
+			#about {
+				padding: 0vw;
+			}
+		}
+
+
+		#about .col-md-12 {
+			padding: 2.5vh 0 5vh;
+		}
+
+		@media (min-width:768px) {
+			#about {
+				min-height: 85vh;
+			}
+		}
+
+
+		.text h1 {
+			font-size: 45px;
+			font-weight: bold;
+			color: #333;
+			margin: 5vh auto;
+		}
+
+		.background {
+			background: #fff;
+		}
+
 		#resume {
 			font-size: 18px;
 			margin: 0;
@@ -673,6 +754,68 @@
 			padding-top: 7vh;
 		}
 
+
+		#contact .col-md-8 {
+			padding: 0;
+		}
+
+		#contact .col-md-6,
+		#contact .col-md-12 {
+			margin: calc(10px + 1.5vh) auto;
+		}
+
+		@media(max-width:768px) {
+
+			#contact .col-md-6,
+			#contact .col-md-12 {
+				margin: 5px auto;
+			}
+		}
+
+		#contact input,
+		#contact textarea {
+			width: 100%;
+			text-align: justify;
+			border-radius: 3px;
+			border: none;
+			padding: 15px 20px;
+			background: #efefef;
+			border-bottom: 2px solid white;
+			word-break: break-all;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			resize: none;
+		}
+
+		#contact input:focus,
+		#contact textarea:focus {
+			border: none;
+			outline: none;
+			border-bottom: 3px solid RGB(61, 100, 255);
+		}
+
+		#contact input[type=submit] {
+			border-radius: 50px;
+			width: 100%;
+			max-width: 40vw;
+			background: RGB(61, 100, 255);
+			color: #fff;
+			border: none;
+			outline: none;
+			text-align: center;
+		}
+
+		#contact input[type=submit]:focus,
+		#contact input[type=submit]:active {
+			box-shadow: 0px 0px 0 0.4rem rgba(80, 191, 230, 0.5);
+		}
+
+		#contact {
+			text-align: center;
+			margin: 0 auto 50px;
+			padding-top: 60px;
+		}
+
 		#footer a {
 			text-decoration: none;
 			color: #b3b3b3;
@@ -685,15 +828,11 @@
 			transition: ALL .6s;
 			position: relative;
 			z-index: 1;
-			padding: 0 0 5vh;
+			padding: 0 0 50px;
 		}
 
 		#footer i {
 			cursor: pointer;
-		}
-
-		#contact form {
-			overflow: hidden;
 		}
 
 		#footer h1 {
@@ -771,142 +910,9 @@
 			color: #fff;
 		}
 
-		#contact .col-md-8 {
-			padding: 0;
-		}
-
-		#contact .col-md-6,
-		#contact .col-md-12 {
-			margin: calc(10px + 1.5vh) auto;
-		}
-
-		#contact input,
-		#contact textarea {
-			width: 100%;
-			text-align: justify;
-			border-radius: 3px;
-			border: none;
-			padding: 15px 20px;
-			background: #efefef;
-			border-bottom: 2px solid white;
-			word-break: break-all;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			resize: none;
-		}
-
-		#contact input:focus,
-		#contact textarea:focus {
-			border: none;
-			outline: none;
-			border-bottom: 3px solid RGB(61, 100, 255);
-		}
-
-		#contact input[type=submit] {
-			border-radius: 50px;
-			width: 100%;
-			max-width: 40vw;
-			background: RGB(61, 100, 255);
-			color: #fff;
-			border: none;
-			outline: none;
-			text-align: center;
-		}
-
-		#contact input[type=submit]:focus,
-		#contact input[type=submit]:active {
-			box-shadow: 0px 0px 0 0.4rem rgba(80, 191, 230, 0.5);
-		}
-
-		#contact {
-			text-align: center;
-			margin: 0 auto 5vh;
-			padding-top: 7vh;
-		}
 
 		#footer {
 			background: #000;
 			overflow: hidden;
-			margin-top: 5vh;
-		}
-
-		#about {
-			position: relative;
-			padding: 5vh 5vw 10vh;
-			font-size: 20px;
-			margin: 0;
-			margin-top: 5vh;
-		}
-
-
-		#about p {
-			padding: 0 10px;
-			line-height: 3.5rem;
-			text-align: justify;
-		}
-
-		#about .col-md-5 {
-			text-align: center;
-			position: absolute;
-			right: 0;
-			top: 50%;
-			transform: translateY(-55%);
-		}
-
-		#about .col-md-5 div {
-			border-radius: 100%;
-			height: 45vw;
-			width: 45vw;
-			max-height: 300px;
-			max-width: 300px;
-			margin: auto;
-			position: relative;
-			box-shadow: 0px 0px 2px #444;
-		}
-
-		#about img {
-			height: 40vw;
-			width: 40vw;
-			max-height: 280px;
-			max-width: 280px;
-			border-radius: 100%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		@media (max-width:992px) {
-			#about .col-md-5 {
-				position: relative;
-				transform: translate(0%, 0%);
-				margin: 20px auto;
-			}
-
-			#about {
-				padding: 0vw;
-			}
-		}
-
-
-		#about .col-md-12 {
-			padding: 2.5vh 0 5vh;
-		}
-
-		@media (min-width:768px) {
-			#about {
-				min-height: 85vh;
-			}
-		}
-
-
-		.text h1 {
-			font-size: 45px;
-			font-weight: bold;
-			color: #333;
-			margin: 5vh auto;
-		}
-
-		.background {
-			background: #fff;
+			margin-top: 50px;
 		}
