@@ -398,6 +398,12 @@
 			margin: 5vh auto;
 		}
 
+		@media (max-width:768px) {
+			.text h1 {
+				margin: 40px auto;
+			}
+		}
+
 		.background {
 			background: #fff;
 		}
