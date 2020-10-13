@@ -32,7 +32,6 @@
 		}
 
 		#home {
-			min-height: 100vh;
 			background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg'), linear-gradient(90deg, #edf0ff 50%, #fff 50%);
 			background-position: center;
 			background-size: 3%, 100% 100%;
@@ -41,12 +40,18 @@
 			animation-duration: 2s;
 		}
 
-		main {
+		#home main {
 			position: absolute;
 			top: 45%;
-			left: 50%;
-			transform: translate(-45%, -50%);
+			transform: translateY(-45%);
 			color: #111;
+			font-size: 2.5rem;
+			width: 100%;
+		}
+
+		#home main .text h1 {
+			margin: 20px auto;
+			font-size: 5rem;
 		}
 
 		header {
@@ -242,7 +247,7 @@
 
 			header .nav_toggle {
 				max-height: 500px;
-				padding-bottom: 1vh;
+				padding-bottom: 15px;
 			}
 
 			header #toggle_container {
@@ -280,10 +285,18 @@
 		}
 
 		#home main h2 {
-			font-size: 25px;
+			font-size: 3rem;
 			font-weight: bold;
 		}
-
+@media (max-width:768px){
+	#home main{
+		font-size:2rem;
+	}
+	#home main .text h1{
+	font-size:4rem;}
+	#home main h2{
+	font-size:2.5rem;}
+}
 		.txt-rotate {
 			color: RGB(61, 100, 255);
 			text-decoration: underline;
@@ -323,17 +336,19 @@
 
 		#about {
 			position: relative;
-			padding: 5vh 5vw 10vh;
+			padding: 40px 5vw 70px;
 			font-size: 20px;
 			margin: 0;
-			margin-top: 5vh;
+			margin-top: 50px;
 		}
 
+		#about .text h1 {
+			margin-bottom: 20px;
+		}
 
 		#about p {
 			padding: 0 10px;
 			line-height: 3.5rem;
-			text-align: justify;
 		}
 
 		#about .col-md-5 {
@@ -381,12 +396,12 @@
 
 
 		#about .col-md-12 {
-			padding: 2.5vh 0 5vh;
+			padding:15px 0 25px;
 		}
 
 		@media (min-width:768px) {
 			#about {
-				min-height: 85vh;
+				min-height: 600px;
 			}
 		}
 
@@ -395,12 +410,12 @@
 			font-size: 45px;
 			font-weight: bold;
 			color: #333;
-			margin: 5vh auto;
+			margin: 50px auto;
 		}
 
 		@media (max-width:768px) {
 			.text h1 {
-				margin: 40px auto;
+				margin: 30px auto;
 			}
 		}
 
@@ -421,7 +436,7 @@
 		#volunteer,
 		#certificates {
 			padding: 0 calc(10px + 1.5vw);
-			padding-top: 10vh;
+			padding-top: 70px;
 		}
 
 		.education,
@@ -497,7 +512,7 @@
 		}
 
 		#resume .col-sm-8 {
-			padding: 2vh 5vw;
+			padding: 20px 5vw;
 		}
 
 		#resume .col-sm-4 {
@@ -564,7 +579,7 @@
 			}
 
 			#resume .col-sm-8 {
-				padding: 2vh calc(2vw + 10px);
+				padding: 20px calc(2vw + 10px);
 				text-align: left;
 			}
 		}
@@ -581,7 +596,7 @@
 			color: RGB(61, 100, 255);
 			font-weight: 700;
 			font-size: 32px;
-			margin-bottom: 5vh;
+			margin-bottom: 40px;
 		}
 
 		#resume hr {
@@ -649,6 +664,12 @@
 			min-height: 300px;
 			position: relative;
 			padding: 0;
+		}
+
+		@media (max-width:768px) {
+			#project .col-lg-4 {
+				height: 300px;
+			}
 		}
 
 		#project #emojipedia {
@@ -724,7 +745,7 @@
 		}
 
 		#project .description h1 {
-			margin-bottom: 5vh;
+			margin-bottom: 50px;
 		}
 
 		#project .col-sm-6:hover .description {
@@ -757,9 +778,12 @@
 			z-index: 1;
 			position: relative;
 			background: #fff;
-			padding-top: 7vh;
+			padding-top: 60px;
 		}
 
+		#contact form {
+			overflow: hidden;
+		}
 
 		#contact .col-md-8 {
 			padding: 0;
@@ -767,7 +791,7 @@
 
 		#contact .col-md-6,
 		#contact .col-md-12 {
-			margin: calc(10px + 1.5vh) auto;
+			margin: 15px auto;
 		}
 
 		@media(max-width:768px) {
@@ -786,7 +810,7 @@
 			border: none;
 			padding: 15px 20px;
 			background: #efefef;
-			border-bottom: 2px solid white;
+			border-bottom: 3px solid white;
 			word-break: break-all;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -809,6 +833,7 @@
 			border: none;
 			outline: none;
 			text-align: center;
+			margin-bottom: 5px;
 		}
 
 		#contact input[type=submit]:focus,

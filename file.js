@@ -1,4 +1,5 @@
-		$(document).ready(function () {
+document.querySelector("#home").style.minHeight=window.innerHeight+'px';			
+$(document).ready(function () {
 			$("#about").waypoint(
 				function (direction) {
 					if (direction == "down") {
