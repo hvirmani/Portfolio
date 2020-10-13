@@ -38,6 +38,7 @@
 			z-index: 2;
 			position: relative;
 			animation-duration: 2s;
+			min-height: 100vh;
 		}
 
 		#home main {
@@ -288,15 +289,21 @@
 			font-size: 3rem;
 			font-weight: bold;
 		}
-@media (max-width:768px){
-	#home main{
-		font-size:2rem;
-	}
-	#home main .text h1{
-	font-size:4rem;}
-	#home main h2{
-	font-size:2.5rem;}
-}
+
+		@media (max-width:768px) {
+			#home main {
+				font-size: 2rem;
+			}
+
+			#home main .text h1 {
+				font-size: 4rem;
+			}
+
+			#home main h2 {
+				font-size: 2.5rem;
+			}
+		}
+
 		.txt-rotate {
 			color: RGB(61, 100, 255);
 			text-decoration: underline;
@@ -349,6 +356,7 @@
 		#about p {
 			padding: 0 10px;
 			line-height: 3.5rem;
+			text-align: justify;
 		}
 
 		#about .col-md-5 {
@@ -396,7 +404,7 @@
 
 
 		#about .col-md-12 {
-			padding:15px 0 25px;
+			padding: 15px 0 25px;
 		}
 
 		@media (min-width:768px) {
@@ -656,6 +664,10 @@
 		}
 
 		#project .col-lg-4 {
+			padding: 0;
+		}
+
+		#project .card {
 			background: url(https://images.pexels.com/photos/35188/child-childrens-baby-children-s.jpg?auto=compress&cs=tinysrgb&h=750&w=1260);
 			background-position: center;
 			background-size: cover;
@@ -667,7 +679,7 @@
 		}
 
 		@media (max-width:768px) {
-			#project .col-lg-4 {
+			#project .card {
 				height: 300px;
 			}
 		}
@@ -748,11 +760,11 @@
 			margin-bottom: 50px;
 		}
 
-		#project .col-sm-6:hover .description {
+		#project .card:hover .description {
 			opacity: 1;
 		}
 
-		#project .col-sm-6::after {
+		#project .card::after {
 			content: "";
 			background-image: linear-gradient(RGB(61, 100, 255, 0.90), RGB(61, 100, 255, 0.90));
 			background-size: cover;
@@ -765,7 +777,7 @@
 			margin: 0;
 		}
 
-		#project .col-sm-6:hover::after {
+		#project .card:hover::after {
 			opacity: 1;
 		}
 
@@ -946,4 +958,94 @@
 			background: #000;
 			overflow: hidden;
 			margin-top: 50px;
+		}
+
+		.ftco-animate {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.social p {
+			display: inline;
+		}
+
+		body {
+			background-color: black;
+		}
+
+		.loader {
+			height: 200px;
+			width: 200px;
+			text-align: center;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		@keyframes test {
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		.spinner {
+			position: relative;
+			margin: auto;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.circle1 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border: 4px solid transparent;
+			top: 50%;
+			left: 50%;
+			border-bottom-color: white;
+			border-top-color: white;
+			animation: test 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s infinite;
+		}
+
+		.circle2 {
+			position: absolute;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			border: 4px solid transparent;
+			top: 50%;
+			left: 50%;
+			border-left-color: #0a79df;
+			border-right-color: #0a79df;
+			animation: test 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s infinite;
+		}
+
+		.fadeInUp {
+			animation-name: fadeInUp;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				visibility: hidden;
+				transform: translate3d(0, 40px, 0);
+			}
+
+			to {
+				visibility: visible;
+				opacity: 1;
+				transform: none;
+			}
+		}
+
+		.ftco-animated {
+			animation-duration: .8s;
+			animation-fill-mode: both;
 		}
